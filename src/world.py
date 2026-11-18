@@ -1,6 +1,6 @@
 import os
 import platform
-import colored
+import fabulous.color import blink, plain
 import copy
 import menu
 from numpy import random
@@ -184,5 +184,12 @@ def next_move(map):
         if(player_move and l_step is elements['herb']):
             prob = random.randint(0,10)
 
-            if
+            if(prob < 2):
+                if(l_battle is True):
+                    l_battle = False
+
+                else:
+                    print("A Wild Pokemon appeared")
+                    input()
+                    l_battle = True
         
