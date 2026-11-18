@@ -1,7 +1,7 @@
 from numpy import random
-from pokemon_type import *
-from moves_db import *
-from pokemon_data import *
+from .pokemon_type import *
+from .moves_db import *
+from .pokemon_data import *
 import json
 
 class Trainer:

@@ -2,7 +2,7 @@ import os
 import platform
 # import fabulous.color import blink, plain
 import copy
-import menu
+from . import menu
 from numpy import random
 from colored import fg, bg, attr
 

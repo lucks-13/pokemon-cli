@@ -1,4 +1,4 @@
-from pokemon_type import *
+from .pokemon_type import *
 
 class Move:
     def display_line(self, display_width):
