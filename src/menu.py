@@ -58,4 +58,21 @@ def next_move():
     while True:
         p_menu()
         key_pressed = input()
-        if key_pressed == ''
+        if key_pressed == 'w':
+            if menu[cursor_x -1][cursor_y] == ' ':
+                menu[cursor_x][cursor_y] = ' '
+                cursor_x = cursor_x -1
+                menu[cursor_x][cursor_y] = '>'
+                p_menu()
+
+        elif key_pressed == 's':
+            if menu[cursor_x +1][cursor_y] == ' ':
+                menu[cursor_x][cursor_y] = ' '
+                cursor_x = cursor_x +1
+                menu[cursor_x][cursor_y] = '>'
+                p_menu()
+
+        elif key_pressed == '':
+            if(menu[options['help']][1] == '>'):
+                p_menu(help)
+                in
