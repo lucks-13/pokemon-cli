@@ -106,7 +106,9 @@ bool_s = {
 }
 
 type_effect = {
-
+    0 : [0.5, 0.5, 1, 1, 0.5, 1, 0.5, 2, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1],
+    1 : [1, 0.5, 1, 0.5, 1, 1, 2, 1, 1, 1, 1, 0.5, 1, 2, 1, 2, 1, 1],
+    2 : [0],
 }
 
 def list_to_string(items, row_count, col_count, display_width):
