@@ -23,4 +23,13 @@ pokemon_t_by_id {
 }
 
 class Pokemon:
-    def attack_1(self, oppo)
+    def attack_1(self, opponent):
+        available_moves = [0, 1, 2, 3]
+        for i in range(0, 4):
+            if self.moves[i].pp == 0:
+                available_moves.remove(i)
+
+        if len(available_moves) == 0:
+            self.attack(opponent, -1)
+            return 'tackle_a'
+        
