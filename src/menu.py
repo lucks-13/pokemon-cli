@@ -45,4 +45,17 @@ def p_menu(menu = menu):
     world.clean_src()
     c_menu = copy.deepcopy(menu)
     for i in c_menu:
-        
+        line = " ".join(i)
+        line = colored(line, 'white')
+        print(line)
+
+def print_pokedex():
+    print("No Pokemon has Discovered.")
+
+def next_move():
+    global cursor_x
+    global cursor_y
+    while True:
+        p_menu()
+        key_pressed = input()
+        if key_pressed == ''
