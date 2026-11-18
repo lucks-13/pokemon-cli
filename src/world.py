@@ -155,4 +155,11 @@ def next_move(map):
                 input()
 
         elif c_cell is elements['herb']:
-            print("This is a patch of ")
+            print("This is a patch of tall Grass", end="")
+            input()
+            print("Wild Pokemon might appear !", end="")
+            input()
+
+        elif c_cell is elements['wall']:
+            print("There is a Wall A")
+        
