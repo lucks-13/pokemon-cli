@@ -2,7 +2,7 @@ from pokemon_type import *
 
 class Move:
     def display_line(self, display_width):
-        return [ self.name, "-" * display_width, "Type : " + type_name[self.move_type], "Category : " + category_name[self.category], "Power : " + str(self.power), "Accuracy : " + str(self.accuracy), "PP" : str(self.pp) + "/" + str(self.pp_max), "-" * display_width ]
+        return  self.name, "-" * display_width, "Type : " + type_name[self.move_type], "Category : " + category_name[self.category], "Power : " + str(self.power), "Accuracy : " + str(self.accuracy), "PP" : str(self.pp) + "/" + str(self.pp_max), "-" * display_width ]
 
     def __str__(self):
         return '\n'.join(self.display_line())
@@ -34,6 +34,20 @@ def format_move(move_data):
 
     move_data['pp'] = int(move_data['pp'])
 
-def move_to_
+def move_to_dict(move):
+    move_data = move
+
+    return {
+        'name' : move_data.name,
+        'type' : move_data.move_type,
+        'category' : move_data.category,
+        'power' : move_data.power,
+        'accuracy' : move_data.accuracy,
+        'pp' : move_data.pp_max
+    }
+
+move_db = {
+
+}
 
         
