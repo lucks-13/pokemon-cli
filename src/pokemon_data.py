@@ -71,6 +71,14 @@ class Pokemon:
                 "Special Attack : " + str(self.s_attqch) + '\n'
                 "Defence : " + str(self.defense) + '\n'
                 "Special Defence : " + str(self.s_defense) + '\n'
-                "Speed : " + 
-
+                "Speed : " + str(self.speed) + '\n'
+                "------------------------------------------\n"
+                "--- Moves ---\n" + moves_details + '\n'
             )
+
+        return pokemon_details
+
+    def set_base_stats(self, max_hp, attack, defense, s_attack, s_defence, speed):
+        self.max_hp = max_hp
+        self.hp = self.max_hp
+        self.attach
