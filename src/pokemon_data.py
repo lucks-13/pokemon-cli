@@ -102,5 +102,8 @@ class Pokemon:
         if not move_learned:
             pass
 
-        
+    def display_line(self, display_width):
+        bar_width = display_width - 2
+        fill_width = int(self.hp * bar_width / self.max_hp)
+        hp_bar = ('#' * fill_width) + ('')
         
