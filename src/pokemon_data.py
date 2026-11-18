@@ -169,6 +169,15 @@ class Pokemon:
     def level_up(self):
         if self.level < 100:
             self.level += 1
+            self.max_hp += 1
+            self.attack_stat += 1
+            self.s_attack += 1
+            self.s_defense += 1
+            self.speed += 1
+
+    def attack(self, opponent, move_index):
+        if move_index == -1:
             
+
 
         
