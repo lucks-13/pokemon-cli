@@ -33,3 +33,10 @@ class Pokemon:
             self.attack(opponent, -1)
             return 'tackle_a'
         
+        else:
+            sel_move = available_moves[random.randint(0, len(available_moves))]
+            self.attack(opponent, sel_move)
+            return str(self.moves[sel_move].name).lower().replace(" ", "_")
+
+    def restore_move_pp(self, move_index, restore_pp=100):
+        if()
