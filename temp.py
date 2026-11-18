@@ -1,39 +1,7 @@
-legendary_pokemon = [
-    'moltres', 
-    'zapdos', 
-    'articuno', 
-    'mew', 
-    'mewtwo', 
-    'raikou', 
-    'entei', 
-    'suicune', 
-    'lugia', 
-    'ho-oh', 
-    'celebi', 
-    'regirock', 
-    'regice', 
-    'registeel', 
-    'latias', 
-    'latios', 
-    'kyogre', 
-    'groudon', 
-    'rayquaza', 
-    'jirachi', 
-    'deoxys', 
-    'uxie', 
-    'mesprit', 
-    'azelf', 
-    'dialga', 
-    'palkia', 
-    'heatran', 
-    'regigigas', 
-    'giratina', 
-    'cresselia', 
-    'phione', 
-    'manaphy',
-    'darkai',
-    'arceus',
-    'shaymin'
-]
+from pokemon_data import Pokemon
+from trainer import Trainer, save_game
 
-print(sorted(legendary_pokemon))
+player = Trainer("Test Trainer")
+starter = Pokemon(pokemon_number=1, level=5)
+player.append_on_team(starter)
+save_game(player, "pokemon")
