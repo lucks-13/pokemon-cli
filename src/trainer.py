@@ -33,7 +33,13 @@ class Trainer:
 
         return exit_bool
 
-    def __
+    def __init__(self, name, gender=Male, t_id = random.randint(1, 2^32), pokemon_team = []):
+        self.name = name
+        self.gender = gender
+        self.trainer_id = t_id
+        self.team = pokemon_team
+
+
 
 def save_game(trainer, file_path = "pokemon_cli_save.json"):
     team_data = []
@@ -43,5 +49,12 @@ def save_game(trainer, file_path = "pokemon_cli_save.json"):
     save_data = {
         'name' : trainer.name,
         'gender' : trainer.gender,
-
+        'id' : trainer.trainer_id,
+        'team' : team_data
     }
+
+    with open(file_path, 'w') as out_file:
+        save_data = json.load(json_file)
+    team = []
+
+    for 
