@@ -57,6 +57,9 @@ move_db = {
     'explosion' : Move("Explosion", normal, physical, 150, 100, 5),
     'blizzard' : Move("Blizzard", normal, physical, 110, 70, 5),
     'surf' : Move("Surf", normal, physical, 90, 100, 15),
+    'splash' : Move("Splash", normal, physical, 150, 100, 5),
+    'hydro_pump' : Move("Hydro Pump", normal, physical, 110, 80, 5),
+    'thunder' : Move("Thunder", normal, physical, 110, 70, 10),
 }
 
         
