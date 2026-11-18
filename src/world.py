@@ -130,4 +130,20 @@ def next_move(map):
             map[p_x][p_y] = elements['player']
             player_move = True
 
-        
+        elif key_pressed == 'a':
+            if map[p_x][p_y -1] in (elements['empty'], elements['herb']):
+                map[p_x][p_y] = l_step
+                l_step = map[p_x][p_y -1]
+                p_y = p_y -1
+                map[p_x][p_y] = elements['player']
+                player_move = True
+
+        elif key_pressed == 'd':
+                if map[p_x][p_y +1] in (elements['empty'], elements['herb']):
+                    map[p_x][p_y] = l_step
+                    l_step = map[p_x][p_y +1]
+                    p_y = p_y +1
+                    map[p_x][p_y] = elements['player']
+                    player_move = True
+
+        elif 
