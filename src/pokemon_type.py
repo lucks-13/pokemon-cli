@@ -24,5 +24,23 @@ type_name = {
     bug : 'Bug',
     dragon : 'Dragon',
     electric : 'Electric',
-    ghost : 'Ghost'
+    ghost : 'Ghost',
+    fire : 'Fire',
+    fairy : 'Fairy',
+    ice : 'Ice',
+    fight : 'Fight',
+    normal : 'Normal',
+    grass : 'Grass',
+    psychic : 'Psychic',
+    rock : 'Rock',
+    dark : 'Dark',
+    land : 'Land',
+    poison : 'Poison',
+    fly : 'Fly',
+    no_type : '-'
+}
+
+t_name_i = {
+    'steel' : steel,
+    
 }
