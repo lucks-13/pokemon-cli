@@ -33,11 +33,15 @@ class Trainer:
 
         return exit_bool
 
-    def save_game(trainer, file_path = "pokemon_cli_save.json"):
-        team_data = []
-        for i in range(0, len(trainer.team)):
-            team_data.append(pokemon_to_set(trainer.team[i]))
+    def __
 
-        save_data = {
-            self.
-        }
+def save_game(trainer, file_path = "pokemon_cli_save.json"):
+    team_data = []
+    for i in range(0, len(trainer.team)):
+        team_data.append(pokemon_to_set(trainer.team[i]))
+
+    save_data = {
+        'name' : trainer.name,
+        'gender' : trainer.gender,
+
+    }
