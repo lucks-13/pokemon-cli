@@ -118,7 +118,18 @@ class Pokemon:
             "Level : " + str(self.level),
             "Type : " + type_name[self.types],
             "(" + hp_bar + ")",
-            
-
+            "\t HP : " + str(self.hp) + '/' + str(self.max_hp),
+            "-" * display_width
         ]
+
+    def __init__(self, pokemon_number=0, level=5, trainer_id=0):
+        if pokemon_number in pokemon_db:
+            self.name = pokemon_db[pokemon_number]
+            self.type = pokemon_t_by_id[pokemon_number]
+
+        else:
+            self.name = "Incomplete"
+            self.type = no_type
+
+        self.num = pok
         
