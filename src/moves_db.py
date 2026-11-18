@@ -51,7 +51,12 @@ move_db = {
     'tackle_a' : Move("Tackle A", normal, physical, 50, 100, 1),
     'tackle_b' : Move("Tackle B", normal, physical, 50, 100, 35),
     'feint' : Move("Feint", normal, physical, 60, 100, 20),
-    'f' : Move("Flame THrower", normal, physical, 110, 85, 5),
+    'flame_thrower' : Move("Flame THrower", normal, physical, 110, 85, 5),
+    'solar_beam' : Move("Solar Beam", normal, physical, 120, 100, 10),
+    'earthquake' : Move("Earthquake", normal, physical, 100, 100, 10),
+    'explosion' : Move("Explosion", normal, physical, 150, 100, 5),
+    'blizzard' : Move("Blizzard", normal, physical, 110, 70, 5),
+    'surf' : Move("Surf", normal, physical, 90, 100, 15),
 }
 
         
