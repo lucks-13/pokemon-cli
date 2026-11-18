@@ -47,7 +47,7 @@ def save_game(trainer, file_path = "pokemon_cli_save.json"):
     }
 
     with open(file_path, 'w') as out_file:
-        json.dumps(save_data, out_file)
+        json.dump(save_data, out_file)
 
 def load_game(file_path="pokemon_cli_save.json"):
     with open(file_path) as json_file:

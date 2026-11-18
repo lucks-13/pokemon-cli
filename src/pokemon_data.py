@@ -182,47 +182,47 @@ class Pokemon:
         for i in range(0, 4):
             self.restore_move_pp(i)
 
-    def dict_to_pokemon(set_p):
-        pokemon_record = set_p
-        pokemon_instance = Pokemon(pokemon_record['number'], pokemon_record['level'], pokemon_record['trainer_id'])
-        pokemon_instance.type = pokemon_record['type']
-        pokemon_instance.gender = pokemon_record['gender']
-        pokemon_instance.set_base_stats(pokemon_record['hp'], pokemon_record['attack'], pokemon_record['defense'], pokemon_record['s_attack'], pokemon_record['s_defense'], pokemon_record['speed'])
-        moves = []
-        for move in pokemon_record['moves']:
-            moves.append(dict_to_move(move))
-        pokemon_instance.moves = moves
-        return pokemon_instance
+def dict_to_pokemon(set_p):
+    pokemon_record = set_p
+    pokemon_instance = Pokemon(pokemon_record['number'], pokemon_record['level'], pokemon_record['trainer_id'])
+    pokemon_instance.type = pokemon_record['type']
+    pokemon_instance.gender = pokemon_record['gender']
+    pokemon_instance.set_base_stats(pokemon_record['hp'], pokemon_record['attack'], pokemon_record['defense'], pokemon_record['s_attack'], pokemon_record['s_defense'], pokemon_record['speed'])
+    moves = []
+    for move in pokemon_record['moves']:
+        moves.append(dict_to_move(move))
+    pokemon_instance.moves = moves
+    return pokemon_instance
 
-    def pokemon_format(pokemon_record):
-        pokemon_record['number'] = int(pokemon_record['number'])
-        pokemon_record['name'] = str(pokemon_record['name']).title()
-        pokemon_record['type'] = int(t_name_i[pokemon_record['type'].lower()])
-        pokemon_record['hp'] = int(pokemon_record['hp'])
-        pokemon_record['attack'] = int(pokemon_record['attack'])
-        pokemon_record['defense'] = int(pokemon_record['defense'])
-        pokemon_record['s_attack'] = int(pokemon_record['s_attack'])
-        pokemon_record['s_defense'] = int(pokemon_record['s_defense'])
-        pokemon_record['speed'] = int(pokemon_record['speed'])
+def pokemon_format(pokemon_record):
+    pokemon_record['number'] = int(pokemon_record['number'])
+    pokemon_record['name'] = str(pokemon_record['name']).title()
+    pokemon_record['type'] = int(t_name_i[pokemon_record['type'].lower()])
+    pokemon_record['hp'] = int(pokemon_record['hp'])
+    pokemon_record['attack'] = int(pokemon_record['attack'])
+    pokemon_record['defense'] = int(pokemon_record['defense'])
+    pokemon_record['s_attack'] = int(pokemon_record['s_attack'])
+    pokemon_record['s_defense'] = int(pokemon_record['s_defense'])
+    pokemon_record['speed'] = int(pokemon_record['speed'])
 
-    def pokemon_to_dict(pokemon):
-        pokemon_data = pokemon
-        move_data = []
-        for i in range(0, len(pokemon_data.moves)):
-            move_data.append(move_to_dict(pokemon_data.moves[i]))
-        pokemon_record = {
-            'number': pokemon_data.num,
-            'name' : pokemon_data.name,
-            'type' : pokemon_data.type,
-            'level' : pokemon_data.level,
-            'trainer_id' : pokemon_data.trainer_id,
-            'gender' : pokemon_data.gender,
-            'hp' : pokemon_data.max_hp,
-            'attack' : pokemon_data.attack_stat,
-            'defense' : pokemon_data.defense,
-            's_attack' : pokemon_data.s_attack,
-            's_defense' : pokemon_data.s_defense,
-            'speed' : pokemon_data.speed,
-            'moves' : move_data
-        }
-        return pokemon_record
+def pokemon_to_dict(pokemon):
+    pokemon_data = pokemon
+    move_data = []
+    for i in range(0, len(pokemon_data.moves)):
+        move_data.append(move_to_dict(pokemon_data.moves[i]))
+    pokemon_record = {
+        'number': pokemon_data.num,
+        'name' : pokemon_data.name,
+        'type' : pokemon_data.type,
+        'level' : pokemon_data.level,
+        'trainer_id' : pokemon_data.trainer_id,
+        'gender' : pokemon_data.gender,
+        'hp' : pokemon_data.max_hp,
+        'attack' : pokemon_data.attack_stat,
+        'defense' : pokemon_data.defense,
+        's_attack' : pokemon_data.s_attack,
+        's_defense' : pokemon_data.s_defense,
+        'speed' : pokemon_data.speed,
+        'moves' : move_data
+    }
+    return pokemon_record
