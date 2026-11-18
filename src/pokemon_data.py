@@ -177,7 +177,17 @@ class Pokemon:
 
     def attack(self, opponent, move_index):
         if move_index == -1:
-            
+            selected_move = move_db['tackle_a']
+        
+        else:
+            selected_move = self.moves[move_index]
 
+        if selected_move.move_type == self.type:
+            stab_bonus = 1.5
+
+        else:
+            stab_bonus = 1
+
+        effect_mu
 
         
