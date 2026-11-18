@@ -230,4 +230,8 @@ class Pokemon:
 
     def pokemon_format(pokemon_record):
         pokemon_record['number'] = int(pokemon_record['number'])
-        pokemon_record['name']
+        pokemon_record['name'] = str(pokemon_record['name']).title()
+        pokemon_record['type'] = int(t_name_i[pokemon_record['type'].lower()])
+        pokemon_record['hp'] = int(pokemon_record['hp'])
+        pokemon_record['attack'] = int(pokemon_record['attack'])
+        pokemon_record['defense'] = pokemon_record['defe']
