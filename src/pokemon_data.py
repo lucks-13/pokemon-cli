@@ -218,4 +218,16 @@ class Pokemon:
         pokemon_instance = Pokemon(pokemon_record['number'], pokemon_record['level'], pokemon_record['trainer_id'])
         pokemon_instance.type = pokemon_record['type']
         pokemon_instance.gender = pokemon_record['gender']
-        pokemon_instance.set_base_stats(pokemon_record['hp'], pokemon_record['hp'], pokemon_record['hp'], pokemon_record['hp'], pokemon_record['hp'], )        
+        pokemon_instance.set_base_stats(pokemon_record['hp'], pokemon_record['attack'], pokemon_record['defense'], pokemon_record['s_attack'], pokemon_record['s_defense'], pokemon_record['speed'])
+        moves = []
+
+        for move in pokemon_record['moves']:
+            moves.append(dict_to_move(move))
+
+        pokemon_instance.moves = moves
+
+        return pokemon_instance
+
+    def pokemon_format(pokemon_record):
+        pokemon_record['number'] = int(pokemon_record['number'])
+        pokemon_record['name']
