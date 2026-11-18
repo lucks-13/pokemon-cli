@@ -244,4 +244,16 @@ class Pokemon:
         move_data = []
 
         for i in range(0, len(pokemon_data.moves)):
-            move_data.append(move_to_dict(pokemon_record))
+            move_data.append(move_to_dict(pokemon_data.moves[i]))
+
+        pokemon_record = {
+            'number': pokemon_data.num,
+            'name' : pokemon_data.name,
+            'type' : pokemon_data.type,
+            'level' : pokemon_data.level,
+            'trainer_id' : pokemon_data.trainer_id,
+            'gender' : pokemon_data.gender,
+            
+        }
+
+        return pokemon_record
