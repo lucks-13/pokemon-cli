@@ -105,5 +105,14 @@ class Pokemon:
     def display_line(self, display_width):
         bar_width = display_width - 2
         fill_width = int(self.hp * bar_width / self.max_hp)
-        hp_bar = ('#' * fill_width) + ('')
+        hp_bar = ('#' * fill_width) + ('_' * (bar_width - fill_width))
+        if self.gender == no_gender:
+            gender_label = ""
+        
+        else:
+            gender_label = str(g_name[self.gender])
+
+        return [
+            
+        ]
         
