@@ -45,4 +45,6 @@ class Pokemon:
         else:
             self.moves[move_index].pp += restore_pp
 
-    def set_moves()
+    def set_moves(self, move_list):
+        if len(move_list) <= 4:
+            self.moves = move_list
