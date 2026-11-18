@@ -14,7 +14,7 @@ pokemon_db = {
     3 : 'Groudon'
 }
 
-pokemon_t_by_id {
+pokemon_t_by_id = {
     0 : normal,
     1 : grass,
     2 : water,

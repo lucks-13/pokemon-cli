@@ -8,7 +8,7 @@ class Move:
             "Category : " + category_name[self.category], 
             "Power : " + str(self.power),
             "Accuracy : " + str(self.accuracy),
-            "PP" : str(self.pp) + "/" + str(self.pp_max),
+            "PP : "+ str(self.pp) + "/" + str(self.pp_max),
             "-" * display_width
         ]
 
