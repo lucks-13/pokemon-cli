@@ -11,7 +11,7 @@ class Trainer:
         text_team = ""
         if len(self.team) == 0:
             text_team = "There are no Pokemon in the Team \n"
-        
+
         else:
             text_team = list_to_string(self.team, 7, len(self.team), 24)
 
@@ -39,8 +39,6 @@ class Trainer:
         self.trainer_id = t_id
         self.team = pokemon_team
 
-
-
 def save_game(trainer, file_path = "pokemon_cli_save.json"):
     team_data = []
     for i in range(0, len(trainer.team)):
@@ -54,7 +52,6 @@ def save_game(trainer, file_path = "pokemon_cli_save.json"):
     }
 
     with open(file_path, 'w') as out_file:
-        save_data = json.load(json_file)
-    team = []
+        json.dumps(save_data, out_file)
 
-    for 
+def load_game(file_path="")
