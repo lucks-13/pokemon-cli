@@ -1,5 +1,6 @@
 import os
 import sys
+import copy
 from termcolor import colored
 import world
 
@@ -25,7 +26,23 @@ help = [['*', '###################', '*'],
         ['#', "S - Move Backward ", '*'],
         ['#', "A - Move Left ", '*'],
         ['#', "D - Move Right ", '*'],
-        ['#', "W - Move Inter ", '*'],
-        ['#', "W - Move Forward ", '*'],
+        ['#', "E - Interact ", '*'],
+        ['#', "M - Open the Menu ", '*'],
         ['*', '###################', '*']
         ]
+
+cursor_x = 1
+cursor_y = 1
+menu[cursor_x][cursor_y] = '>'
+
+def exit_game():
+    sys.exit(1)
+
+def p_pokemon():
+    print("There are no Pokemon to Display")
+
+def p_menu(menu = menu):
+    world.clean_src()
+    c_menu = copy.deepcopy(menu)
+    for i in c_menu:
+        
