@@ -4,38 +4,10 @@ from moves_db import *
 import json
 
 legendary_pokemon = {
-    'moltres', 
-    'zapdos', 
-    'articuno', 
-    'mew', 
-    'mewtwo', 
-    'raikou', 
-    'entei', 
-    'suicune', 
-    'lugia', 
-    'ho-oh', 
-    'celebi', 
-    'regirock', 
-    'regice', 
-    'registeel', 
-    'latias', 
-    'latios', 
-    'kyogre', 
-    'groudon', 
-    'rayquaza', 
-    'jirachi', 
-    'deoxys', 
-    'uxie', 
-    'mesprit', 
-    'azelf', 
-    'dialga', 
-    'palkia', 
-    'heatran', 
-    'regigigas', 
-    'giratina', 
-    'cresselia', 
-    'phione', 
-    'manaphy',
-    'darkai',
-    'arc'
+    'arceus', 'articuno', 'azelf', 'celebi', 'cresselia', 'darkai', 'deoxys', 'dialga', 'entei', 'giratina', 'groudon', 'heatran', 'ho-oh', 'jirachi', 'kyogre', 'latias', 'latios', 'lugia', 'manaphy', 'mesprit', 'mew', 'mewtwo', 'moltres', 'palkia', 'phione', 'raikou', 'rayquaza', 'regice', 'regigigas', 'regirock', 'registeel', 'shaymin', 'suicune', 'uxie', 'zapdos'
+    }
+
+
+pokemon_db = {
+    0 : 
 }
