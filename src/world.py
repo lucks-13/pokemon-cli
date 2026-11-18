@@ -1,6 +1,6 @@
 import os
 import platform
-import fabulous.color import blink, plain
+# import fabulous.color import blink, plain
 import copy
 import menu
 from numpy import random
