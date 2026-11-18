@@ -9,5 +9,18 @@ legendary_pokemon = {
 
 
 pokemon_db = {
-    0 : 
+    0 : 'Missing-No',
+    1 : 'Balbasaur',
+    2 : 'Kyogre',
+    3 : 'Groudon'
 }
+
+pokemon_t_by_id {
+    0 : normal,
+    1 : grass,
+    2 : water,
+    3 : land
+}
+
+class Pokemon:
+    def attack_1(self, oppo)
