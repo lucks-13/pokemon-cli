@@ -131,5 +131,26 @@ class Pokemon:
             self.name = "Incomplete"
             self.type = no_type
 
-        self.num = pok
+        self.num = pokemon_number
+
+        if level < 5:
+            level  = 5
+        
+        self.level = level
+        self.trainer_id = trainer_id
+
+        self.moves = []
+        for i in range(0, 4):
+            self.moves.append(move_db[''])
+
+        if self.name.lower() in legendary_pokemon:
+            self.gender = no_gender
+
+        else:
+            self.gender = random.randint(0, 2)
+
+        self.max_hp = 45
+        self.hp = self.max_hp
+        self.attack_stat = 
+
         
