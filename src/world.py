@@ -154,23 +154,35 @@ def next_move(map):
                 print("To Enter the Menu, Press M", end="")
                 input()
 
-        elif c_cell is elements['herb']:
-            print("This is a patch of tall Grass", end="")
-            input()
-            print("Wild Pokemon might appear !", end="")
-            input()
+            elif c_cell is elements['herb']:
+                print("This is a patch of tall Grass", end="")
+                input()
+                print("Wild Pokemon might appear !", end="")
+                input()
 
-        elif c_cell is elements['wall']:
-            print("There is a Wall Ahead", end="")
-            input()
+            elif c_cell is elements['wall']:
+                print("There is a Wall Ahead", end="")
+                input()
 
-        elif c_cell is elements['jump']:
-            print("I can Jump this from other side", end="")
-            input()
+            elif c_cell is elements['jump']:
+                print("I can Jump this from other side", end="")
+                input()
 
-        elif c_cell is elements['tree']:
-            print("Its a Tree", end="")
+            elif c_cell is elements['tree']:
+                print("Its a Tree", end="")
 
-        elif c_cell is elements['close']:
-            p
+            elif c_cell is elements['close']:
+                print("The Path is blocked", end="")
+                input()
+            
+            update_map(map)
+
+        elif key_pressed == 'm':
+            menu.next_move()
+        
+        update_map(map)
+        if(player_move and l_step is elements['herb']):
+            prob = random.randint(0,10)
+
+            if
         
