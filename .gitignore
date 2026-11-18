@@ -6,3 +6,5 @@
 /setup-auto-git-push.ps1
 
 src/__pycache__
+.venv
+* .pyc
