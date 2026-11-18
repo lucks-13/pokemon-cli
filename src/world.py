@@ -92,6 +92,15 @@ def map_color(map):
 
             elif(map[i][col] == elements['player']):
                 c_map[i][col] = fg('blue') + map[i][col] + attr(0)
-            
 
-            
+    return c_map
+
+def update_map(map):
+    clean_scr()
+    p_map(map_color(map))
+
+def next_move(map):
+    global p_x
+    global p_y
+    global l_step
+    
