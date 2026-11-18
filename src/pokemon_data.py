@@ -113,6 +113,12 @@ class Pokemon:
             gender_label = str(g_name[self.gender])
 
         return [
+            self.name + " " + gender_label,
+            "-" * display_width,
+            "Level : " + str(self.level),
+            "Type : " + type_name[self.types],
+            "(" + hp_bar + ")",
             
+
         ]
         
