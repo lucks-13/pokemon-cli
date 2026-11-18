@@ -61,3 +61,9 @@ def clean_scr():
     else:
         os.system('clear')
 
+def p_map(map):
+    for i in range(len(map)):
+        print(" ".join(map[i]))
+
+def map_color(map):
+    
