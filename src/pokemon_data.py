@@ -195,6 +195,20 @@ class Pokemon:
         if selected_move.category == physical:
             damage = int(0.01 * stab_bonus * effect_multiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
 
-        elif 
+        elif selected_move.category == special:
+            damage = int(0.01 * stab_bonus * effect_multiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
 
+            if opponent.hp <= damage:
+                opponent.hp = 0
+
+            else:
+                opponent.hp -= damage
+
+            if selected_move.name != 'Tackle A':
+                selected_move.pp -= 1
+
+    def restore_all(self):
+        self.restore_hp()
+
+        for 
         
