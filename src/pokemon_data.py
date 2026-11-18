@@ -57,5 +57,12 @@ class Pokemon:
             moves_details = list_to_string(self.moves, 8, len(self.moves), 24)
 
             pokemon_details = (
-                ""
+                "Name : " + self.name + '\n'
+                "Number : " + str(self.num) + '\n'
+                "Type : " + type_name[self.type] + '\n'
+                "Wild : " + bool_s[(self.trainer_id == 0)] + '\n'
+                "Trainer ID : " + str(self.trainer_id) + '\n'
+                "Gender : " + str(g_name[self.gender]) + '\n'
+                "--- Stats ---\n"
+                "Level : " + str(self)
             )
