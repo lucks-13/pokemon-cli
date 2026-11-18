@@ -253,7 +253,13 @@ class Pokemon:
             'level' : pokemon_data.level,
             'trainer_id' : pokemon_data.trainer_id,
             'gender' : pokemon_data.gender,
-            
+            'hp' : pokemon_data.max_hp,
+            'attack' : pokemon_data.attack_stat,
+            'defense' : pokemon_data.defense,
+            's_attack' : pokemon_data.s_attack,
+            's_defense' : pokemon_data.s_defense,
+            'speed' : pokemon_data.speed,
+            'moves' : move_data
         }
 
         return pokemon_record
