@@ -39,4 +39,10 @@ class Pokemon:
             return str(self.moves[sel_move].name).lower().replace(" ", "_")
 
     def restore_move_pp(self, move_index, restore_pp=100):
-        if()
+        if(self.moves[move_index].pp + restore_pp) > self.moves[move_index].pp_max:
+            self.moves[move_index].pp = self.moves[move_index].pp_max
+        
+        else:
+            self.moves[move_index].pp += restore_pp
+
+    def set_moves()
