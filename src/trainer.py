@@ -11,10 +11,8 @@ class Trainer:
         text_team = ""
         if len(self.team) == 0:
             text_team = "There are no Pokemon in the Team \n"
-
         else:
             text_team = list_to_string(self.team, 7, len(self.team), 24)
-
         return (
             "Name : " + self.name + '\n'
             "Gender : " + text_gender + '\n'
@@ -26,11 +24,9 @@ class Trainer:
         exit_bool = False
         if pokemon.trainer_id == 0:
             pokemon.trainer_id = self.trainer_id
-
         if len(self.team) <= 5:
             self.team.append(pokemon)
             exit_bool = True
-
         return exit_bool
 
     def __init__(self, name, gender=male, t_id = random.randint(1, 2^32), pokemon_team = []):
@@ -43,7 +39,6 @@ def save_game(trainer, file_path = "pokemon_cli_save.json"):
     team_data = []
     for i in range(0, len(trainer.team)):
         team_data.append(pokemon_to_dict(trainer.team[i]))
-
     save_data = {
         'name' : trainer.name,
         'gender' : trainer.gender,
@@ -60,7 +55,5 @@ def load_game(file_path="pokemon_cli_save.json"):
     team = []
     for pokemon_data in save_data['team']:
         team.append(dict_to_pokemon(pokemon_data))
-
     trainer = Trainer(save_data['name'], save_data['gender'], save_data['id'], team)
-
     return trainer

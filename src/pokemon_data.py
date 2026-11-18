@@ -114,29 +114,21 @@ class Pokemon:
         if pokemon_number in pokemon_db:
             self.name = pokemon_db[pokemon_number]
             self.type = pokemon_t_by_id[pokemon_number]
-
         else:
             self.name = "Incomplete"
             self.type = no_type
-
         self.num = pokemon_number
-
         if level < 5:
             level  = 5
-        
         self.level = level
         self.trainer_id = trainer_id
-
         self.moves = []
         for i in range(0, 4):
             self.moves.append(move_db[''])
-
         if self.name.lower() in legendary_pokemon:
             self.gender = no_gender
-
         else:
             self.gender = random.randint(0, 2)
-
         self.max_hp = 45
         self.hp = self.max_hp
         self.attack_stat = 49
@@ -150,7 +142,6 @@ class Pokemon:
     def restore_hp(self,restore_amount = 2000):
         if(self.hp + restore_amount) > self.max_hp:
             self.hp = self.max_hp
-
         else:
             self.hp += restore_amount
 
@@ -166,38 +157,28 @@ class Pokemon:
     def attack(self, opponent, move_index):
         if move_index == -1:
             selected_move = move_db['tackle_a']
-        
         else:
             selected_move = self.moves[move_index]
-
         if selected_move.move_type == self.type:
             stab_bonus = 1.5
-
         else:
             stab_bonus = 1
-
         effect_multiplier = type_effect[selected_move.move_type][opponent.type]
         random_factor = random.randint(85, 101)
         damage = 0
-
         if selected_move.category == physical:
             damage = int(0.01 * stab_bonus * effect_multiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
-
         elif selected_move.category == special:
             damage = int(0.01 * stab_bonus * effect_multiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
-
             if opponent.hp <= damage:
                 opponent.hp = 0
-
             else:
                 opponent.hp -= damage
-
             if selected_move.name != 'Tackle A':
                 selected_move.pp -= 1
 
     def restore_all(self):
         self.restore_hp()
-
         for i in range(0, 4):
             self.restore_move_pp(i)
 
@@ -208,12 +189,9 @@ class Pokemon:
         pokemon_instance.gender = pokemon_record['gender']
         pokemon_instance.set_base_stats(pokemon_record['hp'], pokemon_record['attack'], pokemon_record['defense'], pokemon_record['s_attack'], pokemon_record['s_defense'], pokemon_record['speed'])
         moves = []
-
         for move in pokemon_record['moves']:
             moves.append(dict_to_move(move))
-
         pokemon_instance.moves = moves
-
         return pokemon_instance
 
     def pokemon_format(pokemon_record):
@@ -230,10 +208,8 @@ class Pokemon:
     def pokemon_to_dict(pokemon):
         pokemon_data = pokemon
         move_data = []
-
         for i in range(0, len(pokemon_data.moves)):
             move_data.append(move_to_dict(pokemon_data.moves[i]))
-
         pokemon_record = {
             'number': pokemon_data.num,
             'name' : pokemon_data.name,
@@ -249,5 +225,4 @@ class Pokemon:
             'speed' : pokemon_data.speed,
             'moves' : move_data
         }
-
         return pokemon_record

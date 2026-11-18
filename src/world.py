@@ -71,25 +71,18 @@ def map_color(map):
         for col in  range(len(map[0])):
             if map[i][col] == elements['wall']:
                 c_map[i][col] = fg('white') + map[i][col] + attr(0)
-
             elif map[i][col] == elements['tree']:
                 c_map[i][col] = fg('light_green') + map[i][col] + attr(0)
-
             elif map[i][col] == elements['herb']:
                 c_map[i][col] = fg('dark_green') + map[i][col] + attr(0)
-
             elif map[i][col] == elements['jump']:
                 c_map[i][col] = fg('light_grey') + map[i][col] + attr(0)
-
             elif map[i][col] == elements['close']:
                 c_map[i][col] = fg('red') + map[i][col] + attr(0)
-
             elif map[i][col] == elements['post']:
                 c_map[i][col] = fg('yellow') + map[i][col] + attr(0)
-
             elif map[i][col] == elements['player']:
                 c_map[i][col] = fg('blue') + map[i][col] + attr(0)
-
     return c_map
 
 def update_map(map):
@@ -111,7 +104,6 @@ def next_move(map):
                 p_x = p_x -1
                 map[p_x][p_y] = elements['player']
                 player_move = True
-
         elif key_pressed == 's':
             if map[p_x +1][p_y] in (elements['empty'], elements['herb']):
                 map[p_x][p_y] = l_step
@@ -119,14 +111,12 @@ def next_move(map):
                 p_x = p_x +1
                 map[p_x][p_y] = elements['player']
                 player_move = True
-
         elif map[p_x +1][p_y] is elements['jump']:
             map[p_x][p_y] = l_step
             l_step = map[p_x +2][p_y]
             p_x = p_x +2
             map[p_x][p_y] = elements['player']
             player_move = True
-
         elif key_pressed == 'a':
             if map[p_x][p_y -1] in (elements['empty'], elements['herb']):
                 map[p_x][p_y] = l_step
@@ -134,7 +124,6 @@ def next_move(map):
                 p_y = p_y -1
                 map[p_x][p_y] = elements['player']
                 player_move = True
-
         elif key_pressed == 'd':
                 if map[p_x][p_y +1] in (elements['empty'], elements['herb']):
                     map[p_x][p_y] = l_step
@@ -142,7 +131,6 @@ def next_move(map):
                     p_y = p_y +1
                     map[p_x][p_y] = elements['player']
                     player_move = True
-
         elif key_pressed == 'e':
             c_cell = map[p_x -1][p_y]
             if c_cell is elements['post']:
@@ -150,41 +138,31 @@ def next_move(map):
                 input()
                 print("To Enter the Menu, Press M", end="")
                 input()
-
             elif c_cell is elements['herb']:
                 print("This is a patch of tall Grass", end="")
                 input()
                 print("Wild Pokemon might appear !", end="")
                 input()
-
             elif c_cell is elements['wall']:
                 print("There is a Wall Ahead", end="")
                 input()
-
             elif c_cell is elements['jump']:
                 print("I can Jump this from other side", end="")
                 input()
-
             elif c_cell is elements['tree']:
                 print("Its a Tree", end="")
-
             elif c_cell is elements['close']:
                 print("The Path is blocked", end="")
                 input()
-            
             update_map(map)
-
         elif key_pressed == 'm':
             menu.next_move()
-        
         update_map(map)
         if player_move and l_step is elements['herb']:
             prob = random.randint(0,10)
-
             if prob < 2:
                 if l_battle is True:
                     l_battle = False
-
                 else:
                     print("A Wild Pokemon appeared")
                     input()

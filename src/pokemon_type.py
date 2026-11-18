@@ -115,12 +115,10 @@ def list_to_string(items, row_count, col_count, display_width):
         for col_index in range(0, int(col_count / 2)):
             if row_index == 0:
                 f_list += (str(col_index) + ') ' + items[col_index].display_line(display_width)[row_index]).ljust(display_width) + '\t'
-            
             else:
                 f_list += (items[col_index].display_line(display_width)[row_index]).ljust(display_width) + '\t'
         f_list += '\n'
     f_list += '\n'
-
     for row_index in range(0, row_count):
         for col_index in range(int(col_count / 2), col_count):
             if row_index == 0:
