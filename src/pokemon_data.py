@@ -210,5 +210,12 @@ class Pokemon:
     def restore_all(self):
         self.restore_hp()
 
-        for 
-        
+        for i in range(0, 4):
+            self.restore_move_pp(i)
+
+    def dict_to_pokemon(set_p):
+        pokemon_record = set_p
+        pokemon_instance = Pokemon(pokemon_record['number'], pokemon_record['level'], pokemon_record['trainer_id'])
+        pokemon_instance.type = pokemon_record['type']
+        pokemon_instance.gender = pokemon_record['gender']
+        pokemon_instance.set_base_stats(pokemon_record['hp'], pokemon_record['hp'], pokemon_record['hp'], pokemon_record['hp'], pokemon_record['hp'], )        
