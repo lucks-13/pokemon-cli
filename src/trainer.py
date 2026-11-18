@@ -19,5 +19,10 @@ class Trainer:
             "Name : " + self.name + '\n'
             "Gender : " + text_gender + '\n'
             "ID : " + text_id + '\n'
-            "--- T"
+            "--- Team ---\n" + text_team
         )
+
+    def append_on_team(self, pokemon):
+        exit_bool = False
+        if pokemon.id_coach == 0:
+            pokemon.id_coach -
