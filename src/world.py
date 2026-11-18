@@ -109,7 +109,25 @@ def next_move(map):
         player_move = False
         if key_pressed == 'w':
             if map[p_x -1][p_y] in (elements['empty'], elements['herb']):
-                map[p_x -1][p_y] = l_step
+                map[p_x][p_y] = l_step
                 l_step = map[p_x -1][p_y]
                 p_x = p_x -1
-                map[p_x][p_y] = 
+                map[p_x][p_y] = elements['player']
+                player_move = True
+
+        elif key_pressed == 's':
+            if map[p_x +1][p_y] in (elements['empty'], elements['herb']):
+                map[p_x][p_y] = l_step
+                l_step = map[p_x +1][p_y]
+                p_x = p_x +1
+                map[p_x][p_y] = elements['player']
+                player_move = True
+
+        elif map[p_x +1][p_y] is elements['jump']:
+            map[p_x][p_y] = l_step
+            l_step = map[p_x +2][p_y]
+            p_x = p_x +2
+            map[p_x][p_y] = elements['player']
+            player_move = True
+
+        
