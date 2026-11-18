@@ -65,5 +65,3 @@ move_db = {
     'hydro_pump' : Move("Hydro Pump", normal, physical, 110, 80, 5),
     'thunder' : Move("Thunder", normal, physical, 110, 70, 10),
 }
-
-        
