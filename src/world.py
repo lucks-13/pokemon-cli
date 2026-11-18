@@ -146,4 +146,13 @@ def next_move(map):
                     map[p_x][p_y] = elements['player']
                     player_move = True
 
-        elif 
+        elif key_pressed == 'e':
+            c_cell = map[p_x -1][p_y]
+            if c_cell is elements['post']:
+                print("Trainer Tips !", end="")
+                input()
+                print("To Enter the Menu, Press M", end="")
+                input()
+
+        elif c_cell is elements['herb']:
+            print("This is a patch of ")
