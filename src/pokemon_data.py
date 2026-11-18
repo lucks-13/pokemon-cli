@@ -81,4 +81,16 @@ class Pokemon:
     def set_base_stats(self, max_hp, attack, defense, s_attack, s_defence, speed):
         self.max_hp = max_hp
         self.hp = self.max_hp
-        self.attach
+        self.attack_stat = attack
+        self.defense = defense
+        self.s_attack = s_attack
+        self.s_defense = s_defence
+        self.speed = speed
+
+        for i in range(s, self.level):
+            self.level_up()
+
+    def learn_moves(self, new_move):
+        move_learned = False
+
+    for i in range(s, self.level)
