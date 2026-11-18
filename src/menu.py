@@ -66,29 +66,23 @@ def next_move():
                 cursor_x = cursor_x -1
                 menu[cursor_x][cursor_y] = '>'
                 p_menu()
-
         elif key_pressed == 's':
             if menu[cursor_x +1][cursor_y] == ' ':
                 menu[cursor_x][cursor_y] = ' '
                 cursor_x = cursor_x +1
                 menu[cursor_x][cursor_y] = '>'
                 p_menu()
-
         elif key_pressed == '':
             if menu[options['help']][1] == '>':
                 p_menu(help)
                 input()
-
             elif menu[options['pokedex']][1] == '>':
                 p_pokedex()
                 input()
-            
             elif menu[options['pokemon']][1] == '>':
                 p_pokemon()
                 input()
-
             elif menu[options['bckgme']][1] == '>':
                 world.next_move(world.map)
-
             elif menu[options['exit']][1] == '>':
                 exit_game()

@@ -18,7 +18,6 @@ class Move:
 
 def dict_to_move(set_m):
     move_data = set_m
-    
     return Move(move_data['name'], move_data['type'], move_data['category'], move_data['power'], move_data['accuracy'], move_data['pp'])
 
 def format_move(move_data):
@@ -28,15 +27,12 @@ def format_move(move_data):
     move_data['power'] = int(move_data['power'])
     if move_data['accuracy'] == '-':
         move_data['accuracy'] = int(100)
-
     else:
         move_data['accuracy'] = int(move_data['accuracy'])
-
     move_data['pp'] = int(move_data['pp'])
 
 def move_to_dict(move):
     move_data = move
-
     return {
         'name' : move_data.name,
         'type' : move_data.move_type,
