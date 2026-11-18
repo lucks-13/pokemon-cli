@@ -49,7 +49,7 @@ def p_menu(menu = menu):
         line = colored(line, 'white')
         print(line)
 
-def print_pokedex():
+def p_pokedex():
     print("No Pokemon has Discovered.")
 
 def next_move():
@@ -75,4 +75,12 @@ def next_move():
         elif key_pressed == '':
             if(menu[options['help']][1] == '>'):
                 p_menu(help)
-                in
+                input()
+
+            elif(menu[options['pokedex']][1] == '>'):
+                p_pokedex(help)
+                input()
+            
+            elif(menu[options['pokemon']][1] == '>'):
+                p_pokemon()
+                input()
