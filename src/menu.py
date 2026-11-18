@@ -17,7 +17,7 @@ options = {
     'help' : 1,
     'pokedex' : 2,
     'pokemon' : 3,
-    'bckgame' : 4,
+    'bckgme' : 4,
     'exit' : 5
 }
 
@@ -78,9 +78,15 @@ def next_move():
                 input()
 
             elif(menu[options['pokedex']][1] == '>'):
-                p_pokedex(help)
+                p_pokedex()
                 input()
             
             elif(menu[options['pokemon']][1] == '>'):
                 p_pokemon()
                 input()
+
+            elif(menu[options['bckgme']][1] == '>'):
+                world.next_move(world.map)
+
+            elif(menu[options['exit']][1] == '>'):
+                exit_game()

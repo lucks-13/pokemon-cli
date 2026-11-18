@@ -6,3 +6,6 @@ import menu
 from numpy import random
 from colored import fg, bg, attr
 
+map = {
+    0 : ['#',,',',],
+}
