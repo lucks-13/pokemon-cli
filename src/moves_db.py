@@ -2,7 +2,7 @@ from pokemon_type import *
 
 class Move:
     def display_line(self, display_width):
-        return  self.name, "-" * display_width, "Type : " + type_name[self.move_type], "Category : " + category_name[self.category], "Power : " + str(self.power), "Accuracy : " + str(self.accuracy), "PP" : str(self.pp) + "/" + str(self.pp_max), "-" * display_width ]
+        return [ self.name, "-" * display_width, "Type : " + type_name[self.move_type], "Category : " + category_name[self.category], "Power : " + str(self.power), "Accuracy : " + str(self.accuracy), "PP" : str(self.pp) + "/" + str(self.pp_max), "-" * display_width ]
 
     def __str__(self):
         return '\n'.join(self.display_line())
@@ -47,7 +47,11 @@ def move_to_dict(move):
     }
 
 move_db = {
-
+    '' : Move("-", no_type, no_category, 0, 0, 0),
+    'tackle_a' : Move("Tackle A", normal, physical, 50, 100, 1),
+    'tackle_b' : Move("Tackle B", normal, physical, 50, 100, 35),
+    'feint' : Move("Feint", normal, physical, 60, 100, 20),
+    'f' : Move("Flame THrower", normal, physical, 110, 85, 5),
 }
 
         
