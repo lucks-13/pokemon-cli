@@ -39,5 +39,25 @@ b_cell = {
     'wall' : '#',
     'tree' : '*',
     'close' : 'x',
-    'jump' : '-'
+    'jump' : '-',
+    'post' : 'i',
+    'player' : '@'
 }
+
+elements = {
+    'empty' : ' ',
+    'herb' : 'w',
+    **b_cell
+}
+
+l_step = elements['empty']
+p_x = 22
+p_y = 6
+map[p_x][p_y] = elements['player']
+
+def clean_scr():
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
