@@ -13,7 +13,7 @@ class Move:
         ]
 
     def __str__(self):
-        return '\n'.join(self.display_line())
+        return '\n'.join(self.display_line(24))
 
     def __init__(self, name = "-", move_type = no_type, category = no_category, power = 0, accuracy = 0, max_pp = 0):
         self.name = name

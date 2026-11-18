@@ -62,7 +62,7 @@ class Pokemon:
                 "HP : " + str(self.hp) + '\n'
                 "Max HP : " + str(self.max_hp) + '\n'
                 "Attack : " + str(self.attach_stat) + '\n'
-                "Special Attack : " + str(self.s_attqch) + '\n'
+                "Special Attack : " + str(self.s_attack) + '\n'
                 "Defence : " + str(self.defense) + '\n'
                 "Special Defence : " + str(self.s_defense) + '\n'
                 "Speed : " + str(self.speed) + '\n'
@@ -104,7 +104,7 @@ class Pokemon:
             self.name + " " + gender_label,
             "-" * display_width,
             "Level : " + str(self.level),
-            "Type : " + type_name[self.types],
+            "Type : " + type_name[self.type],
             "(" + hp_bar + ")",
             "\t HP : " + str(self.hp) + '/' + str(self.max_hp),
             "-" * display_width
