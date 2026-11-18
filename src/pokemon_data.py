@@ -48,3 +48,14 @@ class Pokemon:
     def set_moves(self, move_list):
         if len(move_list) <= 4:
             self.moves = move_list
+
+    def __str__(self):
+        pokemon_details = ""
+        moves_details = ""
+
+        if len(self.moves) != 0:
+            moves_details = list_to_string(self.moves, 8, len(self.moves), 24)
+
+            pokemon_details = (
+                ""
+            )
