@@ -64,5 +64,13 @@ class Pokemon:
                 "Trainer ID : " + str(self.trainer_id) + '\n'
                 "Gender : " + str(g_name[self.gender]) + '\n'
                 "--- Stats ---\n"
-                "Level : " + str(self)
+                "Level : " + str(self.level) + '\n'
+                "HP : " + str(self.hp) + '\n'
+                "Max HP : " + str(self.max_hp) + '\n'
+                "Attack : " + str(self.attach_stat) + '\n'
+                "Special Attack : " + str(self.s_attqch) + '\n'
+                "Defence : " + str(self.defense) + '\n'
+                "Special Defence : " + str(self.s_defense) + '\n'
+                "Speed : " + 
+
             )
