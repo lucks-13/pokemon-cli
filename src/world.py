@@ -103,4 +103,13 @@ def next_move(map):
     global p_x
     global p_y
     global l_step
-    
+    l_battle = False
+    while True:
+        key_pressed = input()
+        player_move = False
+        if key_pressed == 'w':
+            if map[p_x -1][p_y] in (elements['empty'], elements['herb']):
+                map[p_x -1][p_y] = l_step
+                l_step = map[p_x -1][p_y]
+                p_x = p_x -1
+                map[p_x][p_y] = 
