@@ -66,4 +66,9 @@ def p_map(map):
         print(" ".join(map[i]))
 
 def map_color(map):
-    
+    c_map = copy.deepcopy(map)
+    for i in range(len(map)):
+        for col in  range(len(map[0])):
+            if(map[i][col] == elements['wall']):
+                c_map[i][col] = fg('white') + map[i][col] + attr(0)
+            elif(map[i][col])
