@@ -93,4 +93,14 @@ class Pokemon:
     def learn_moves(self, new_move):
         move_learned = False
 
-    for i in range(s, self.level)
+        for i in range(0, 4):
+            if self.moves[i].name == '-':
+                self.moves[i] = new_move
+                move_learned = True
+                break
+
+        if not move_learned:
+            pass
+
+        
+        
