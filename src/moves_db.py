@@ -11,6 +11,17 @@ class Move:
         self.name = name
         self.move_type = move_type
         self.category = category
-        self
+        self.power = power
+        self.accuracy = accuracy
+        self.pp_max = max_pp
+        self.pp = self.pp_max
+
+def dict_to_move(set_m):
+    move_data = set_m
+    
+    return Move(move_data['name'], move_data['type'], move_data['category'], move_data['power'], move_data['accuracy'], move_data['pp'])
+
+def format_move(move_data):
+    move_data['name'] = str(move_data['name'])    
 
         
