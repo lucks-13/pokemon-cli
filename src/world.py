@@ -71,4 +71,27 @@ def map_color(map):
         for col in  range(len(map[0])):
             if(map[i][col] == elements['wall']):
                 c_map[i][col] = fg('white') + map[i][col] + attr(0)
-            elif(map[i][col])
+
+            elif(map[i][col] == elements['tree']):
+                c_map[i][col] = fg('light_green') + map[i][col] + attr(0)
+
+            elif(map[i][col] == elements['herb']):
+                c_map[i][col] = fg('dark_green') + map[i][col] + attr(0)
+
+            elif(map[i][col] == elements['jump']):
+                c_map[i][col] = fg('light_grey') + map[i][col] + attr(0)
+
+
+            elif(map[i][col] == elements['close']):
+                c_map[i][col] = fg('red') + map[i][col] + attr(0)
+
+
+            elif(map[i][col] == elements['post']):
+                c_map[i][col] = fg('yellow') + map[i][col] + attr(0)
+
+
+            elif(map[i][col] == elements['player']):
+                c_map[i][col] = fg('blue') + map[i][col] + attr(0)
+            
+
+            
