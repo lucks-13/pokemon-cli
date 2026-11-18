@@ -5,4 +5,4 @@
 /.auto_git_push.log
 /setup-auto-git-push.ps1
 
-src/_p
+src/__pycache__
