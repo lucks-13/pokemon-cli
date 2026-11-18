@@ -4,14 +4,15 @@ import copy
 from termcolor import colored
 import world
 
-menu = [['*', '###################', '*'],
-        ['#', ' ','Help ','#'],
-        ['#', ' ','Pokedex ','#'],
-        ['#', ' ','Pokemon ','#'],
-        ['#', ' ','Return to the Game ','#'],
-        ['#', ' ','Exit Game ','#'],
-        ['*', '###################', '*']
-        ]
+menu = [
+    ['*', '###################', '*'],
+    ['#', ' ','Help ','#'],
+    ['#', ' ','Pokedex ','#'],
+    ['#', ' ','Pokemon ','#'],
+    ['#', ' ','Return to the Game ','#'],
+    ['#', ' ','Exit Game ','#'],
+    ['*', '###################', '*']
+    ]
 
 options = {
     'help' : 1,
@@ -21,15 +22,16 @@ options = {
     'exit' : 5
 }
 
-help = [['*', '###################', '*'],
-        ['#', "W - Move Forward ", '*'],
-        ['#', "S - Move Backward ", '*'],
-        ['#', "A - Move Left ", '*'],
-        ['#', "D - Move Right ", '*'],
-        ['#', "E - Interact ", '*'],
-        ['#', "M - Open the Menu ", '*'],
-        ['*', '###################', '*']
-        ]
+help = [
+    ['*', '###################', '*'],
+    ['#', "W - Move Forward ", '*'],
+    ['#', "S - Move Backward ", '*'],
+    ['#', "A - Move Left ", '*'],
+    ['#', "D - Move Right ", '*'],
+    ['#', "E - Interact ", '*'],
+    ['#', "M - Open the Menu ", '*'],
+    ['*', '###################', '*']
+    ]
 
 cursor_x = 1
 cursor_y = 1
@@ -73,20 +75,20 @@ def next_move():
                 p_menu()
 
         elif key_pressed == '':
-            if(menu[options['help']][1] == '>'):
+            if menu[options['help']][1] == '>':
                 p_menu(help)
                 input()
 
-            elif(menu[options['pokedex']][1] == '>'):
+            elif menu[options['pokedex']][1] == '>':
                 p_pokedex()
                 input()
             
-            elif(menu[options['pokemon']][1] == '>'):
+            elif menu[options['pokemon']][1] == '>':
                 p_pokemon()
                 input()
 
-            elif(menu[options['bckgme']][1] == '>'):
+            elif menu[options['bckgme']][1] == '>':
                 world.next_move(world.map)
 
-            elif(menu[options['exit']][1] == '>'):
+            elif menu[options['exit']][1] == '>':
                 exit_game()
