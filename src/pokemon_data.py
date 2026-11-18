@@ -234,4 +234,14 @@ class Pokemon:
         pokemon_record['type'] = int(t_name_i[pokemon_record['type'].lower()])
         pokemon_record['hp'] = int(pokemon_record['hp'])
         pokemon_record['attack'] = int(pokemon_record['attack'])
-        pokemon_record['defense'] = pokemon_record['defe']
+        pokemon_record['defense'] = int(pokemon_record['defense'])
+        pokemon_record['s_attack'] = int(pokemon_record['s_attack'])
+        pokemon_record['s_defense'] = int(pokemon_record['s_defense'])
+        pokemon_record['speed'] = int(pokemon_record['speed'])
+
+    def pokemon_to_dict(pokemon):
+        pokemon_data = pokemon
+        move_data = []
+
+        for i in range(0, len(pokemon_data.moves)):
+            move_data.append(move_to_dict(pokemon_record))
