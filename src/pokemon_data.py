@@ -151,6 +151,24 @@ class Pokemon:
 
         self.max_hp = 45
         self.hp = self.max_hp
-        self.attack_stat = 
+        self.attack_stat = 49
+        self.defense = 65
+        self.s_attack = 49
+        self.s_defense = 65
+        self.speed = 45
+        for i in range(5,level):
+            self.level_up()
+
+    def restore_hp(self,restore_amount = 2000):
+        if(self.hp + restore_amount) > self.max_hp:
+            self.hp = self.max_hp
+
+        else:
+            self.hp += restore_amount
+
+    def level_up(self):
+        if self.level < 100:
+            self.level += 1
+            
 
         
