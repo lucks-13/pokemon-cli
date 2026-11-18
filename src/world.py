@@ -161,5 +161,16 @@ def next_move(map):
             input()
 
         elif c_cell is elements['wall']:
-            print("There is a Wall A")
+            print("There is a Wall Ahead", end="")
+            input()
+
+        elif c_cell is elements['jump']:
+            print("I can Jump this from other side", end="")
+            input()
+
+        elif c_cell is elements['tree']:
+            print("Its a Tree", end="")
+
+        elif c_cell is elements['close']:
+            p
         
