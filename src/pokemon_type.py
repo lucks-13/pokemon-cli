@@ -96,5 +96,22 @@ g_name_i = {
     'female' : female,
     'male' : male,
     'girl' : girl,
-    'boy' : 
+    'boy' : boy,
+    '-' : no_gender
 }
+
+bool_s = {
+    True : 'Yes',
+    False : 'No'
+}
+
+type_effect = {
+
+}
+
+def list_to_string(items, row_count, col_count, display_width):
+    f_list = ""
+    for row_index in range(0, row_count):
+        for col_index in range(0, int(col_count / 2)):
+            if row_index == 0:
+                
