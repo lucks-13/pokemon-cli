@@ -79,7 +79,7 @@ class Pokemon:
         self.s_attack = s_attack
         self.s_defense = s_defence
         self.speed = speed
-        for i in range(s, self.level):
+        for i in range(5, self.level):
             self.level_up()
 
     def learn_moves(self, new_move):
