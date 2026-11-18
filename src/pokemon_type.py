@@ -42,5 +42,32 @@ type_name = {
 
 t_name_i = {
     'steel' : steel,
-    
+    'water' : water,
+    'bug' : bug,
+    'dragon' : dragon,
+    'electric' : electric,
+    'ghost' : ghost,
+    'fire' : fire,
+    'fairy' : fairy,
+    'ice' : ice,
+    'fight' : fight,
+    'normal' : normal,
+    'grass' : grass,
+    'psychic' : psychic,
+    'rock' : rock,
+    'dark' : dark,
+    'land' : land,
+    'poison' : poison,
+    'fly' : fly,
+    '-' : no_type
+}
+
+physical = 0
+special = 1
+no_category = 2
+
+category = {
+    physical : 'Physical',
+    special : 'Special',
+    no
 }
