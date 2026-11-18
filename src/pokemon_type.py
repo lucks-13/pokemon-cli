@@ -66,8 +66,35 @@ physical = 0
 special = 1
 no_category = 2
 
-category = {
+category_name = {
     physical : 'Physical',
     special : 'Special',
-    no
+    no_category : '-'
+}
+
+c_name_i = {
+    'physical' : physical,
+    'special' : special,
+    '-' : no_category
+}
+
+female = 0
+male = 1
+girl = 2
+boy = 3
+no_gender = 4
+
+g_name = {
+    female : 'Female',
+    male : 'Male',
+    girl : 'Girl',
+    boy : 'Boy',
+    no_gender : '-'
+}
+
+g_name_i = {
+    'female' : female,
+    'male' : male,
+    'girl' : girl,
+    'boy' : 
 }
