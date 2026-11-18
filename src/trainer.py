@@ -25,4 +25,19 @@ class Trainer:
     def append_on_team(self, pokemon):
         exit_bool = False
         if pokemon.id_coach == 0:
-            pokemon.id_coach -
+            pokemon.id_coach = self.trainer_id
+
+        if len(self.team) <= 5:
+            self.team.append(pokemon)
+            exit_bool = True
+
+        return exit_bool
+
+    def save_game(trainer, file_path = "pokemon_cli_save.json"):
+        team_data = []
+        for i in range(0, len(trainer.team)):
+            team_data.append(pokemon_to_set(trainer.team[i]))
+
+        save_data = {
+            self.
+        }
