@@ -55,7 +55,7 @@ p_x = 22
 p_y = 6
 map[p_x][p_y] = elements['player']
 
-def clean_scr():
+def clean_src():
     if platform.system() == 'Windows':
         os.system('cls')
     else:
@@ -86,7 +86,7 @@ def map_color(map):
     return c_map
 
 def update_map(map):
-    clean_scr()
+    clean_src()
     p_map(map_color(map))
 
 def next_move(map):

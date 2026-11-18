@@ -42,7 +42,7 @@ def exit_game():
 
 def p_pokemon():
     print("There are no Pokemon to Display")
-
+    
 def p_menu(menu = menu):
     world.clean_src()
     c_menu = copy.deepcopy(menu)
