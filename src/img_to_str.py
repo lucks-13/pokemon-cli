@@ -18,4 +18,18 @@ def load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio):
             new_width = int(resize_ratio * new_width)
             new_height = int(resize_ratio * new_height)
         if native_width != new_width or native_height != new_height:
-            img = img.resize((new_width, new_height), Image)
+            img = img.resize((new_width, new_height), Image.LANCZOS if antialias else Image.NEAREST)
+    return img
+
+def p_img_str(img):
+    for char in img:
+        print(char, end="")
+
+def img_to_str(img_path, max_len = 45, target_aspect_ratio = 0.5):
+    antialias = False
+    try:
+        max_len = float(max_len)
+    except:
+        max_len = 100.0
+    try:
+        target_aspect_ratio = 
