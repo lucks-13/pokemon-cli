@@ -119,4 +119,14 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
                         pre_bg_color = ansi_seq
                     else:
                         ansi_seq += get_ansi_b_seq(pre_fg_color, pre_bg_color, ansi_color, bg_ansi_color)
-                        
+                        pre_fg_color = ansi_color
+                        pre_bg_color = bg_ansi_color
+                    ansi_seq += draw_char
+                    cursor_x += 1
+                if (row_index + 1) != height:
+                    if not is_overdraw:
+                        if pre_bg_color != bg_ansi_color:
+                            ansi_seq += bg_ansi_seq
+                            pre_bg_color = bg_ansi_color
+                        if cursor_y != row_index:
+                            ansi_seq += gen_ansi_to_c_movement()
