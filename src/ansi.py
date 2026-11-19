@@ -65,4 +65,12 @@ def gen_ansi_to_c_movement(curr_x, curr_y, target_x, target_y):
 
 def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = None, curr_c_pos = None, get_pixel_func = None, is_overdraw = False, x_offset = 0):
     if get_pixel_func is None:
-        get_pixel_func = lambda pixels, x, y : (" ", pixe)
+        get_pixel_func = lambda pixels, x, y : (" ", pixels[x, y])
+    if bg_rgba is not None:
+        bg_ansi_color = get_ansi_color_for_rgb(bg_rgba)
+        bg_ansi_seq = get_ansi_b_seq(bg_ansi_color)
+    else:
+        bg_ansi_color = None
+        bg_ansi_seq = "\x1b[49m"
+    if current_ansi_colors is not None:
+        ansi
