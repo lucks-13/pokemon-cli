@@ -263,7 +263,11 @@ def b_wild_pokemon(pl_trainer, opponent_pokemon):
     get_key()
     winner = r_b_algo(pl_active_pokemon, opponent_pokemon)
     if winner == -1:
-        text_type(pl_active_pokemon.name)
+        text_type(pl_active_pokemon.name + " fainted.")
+        get_key()
+    elif winner == 1:
+        text_type(pr.name + " opponent fainted.")
+        get_key()
 
 def b_trainer(pl_trainer, opponent_trainer):
     trainer = pl_trainer
@@ -274,28 +278,17 @@ def b_trainer(pl_trainer, opponent_trainer):
     p_trainer_bs(trainer)
     print(trainer_t_box(trainer,1, 10))
     text_type("\nCool Trainer " + opponent.name + 'Wants to battle !')
-    input()
+    get_key()
     os.system('clear')
     print(trainer_t_box(opponent))
     p_trainer(opponent, 10)
     p_trainer_bs(trainer)
     print(trainer_t_box(trainer, 1, 10))
-    selected_pokemon_index = -1
-    for i in range(0, len(trainer.team)):
-        if trainer.team[i].name != '-' and trainer.team[i].hp > 0:
-            selected_pokemon_index = i
-            break
-    if selected_pokemon_index == -1:
-        print("The Trainer has no Healthy Pokemon")
-    pl_active_pokemon = trainer.team[selected_pokemon_index]
-    selected_pokemon_index = -1
-    for i in range(0, len(opponent.team)):
-        if opponent.team[i].name != '-' and opponent.team[i].hp > 0:
-            selected_pokemon_index = i
-            break
-    if selected_pokemon_index == -1:
-        print("The Trainer has no Healthy Pokemon")
-    opponent_active_pokemon = opponent.team[selected_pokemon_index]
+    pl_active_pokemon = trainer.get_first_healthy_pokemon()
+    opponent_active_pokemon = opponent.
+
+
+    
     text_type("\nGo " + pl_active_pokemon.name + "!")
     input()
     os.system('clear')
