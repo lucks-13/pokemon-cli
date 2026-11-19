@@ -28,12 +28,10 @@ class Pokemon:
             if self.moves[i].pp == 0:
                 available_moves.remove(i)
         if len(available_moves) == 0:
-            self.attack(opponent, -1)
-            return 'tackle_a'
+            return self.attack(opponent, -1)
         else:
             sel_move = available_moves[random.randint(0, len(available_moves))]
-            self.attack(opponent, sel_move)
-            return str(self.moves[sel_move].name).lower().replace(" ", "_")
+            return self.attack(opponent, sel_move)
 
     def restore_move_pp(self, move_index, restore_pp=100):
         if(self.moves[move_index].pp + restore_pp) > self.moves[move_index].pp_max:
@@ -155,6 +153,15 @@ class Pokemon:
             self.speed += 1
 
     def attack(self, opponent, move_index):
+        available_moves = [0, 1, 2, 3]
+        for i in range(0, 4):
+            if self.moves[i].pp == 0:
+                available_moves.remove(i)
+        if len(available_moves) == 0 or move_index
+
+
+
+
         if move_index == -1:
             selected_move = move_db['tackle_a']
         else:
