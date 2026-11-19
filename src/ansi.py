@@ -26,4 +26,13 @@ def gen_ansi_c_seq(curr_fg_color, curr_bg_color, new_fg_color, new_bg_color):
         if new_fg_color is None:
             color_codes.append('39')
         else:
-            color_codes += 
+            color_codes += get_ansi_f_code(new_fg_color)
+    if len(color_codes) > 0:
+        return "\x1b[" + ";".join(color_codes) + "m"
+    else:
+        return ""
+
+def gen_opt_y_move_down_to_x_sol(v_dist):
+    ansi_seq = "\x1b[{0}E".format(v_dist)
+    if v_dist < len(ansi_seq):
+        ansi_seq = '\n' * v_dist
