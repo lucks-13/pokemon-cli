@@ -4,6 +4,7 @@ import sys
 
 from pokemon_type import g_name, type_name, type_effect
 from img_to_str import img_to_str
+from key_input import get_key
 
 def text_type(text, delay = 0.10):
     words = text.split()
@@ -59,8 +60,12 @@ def b_menu(width = 70):
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print('#' * width)
     print('Your Choice : ', end="")
-    choice = input()
-    return int(choice)
+    choice = get_key()
+    try:
+        choice = int(choice)
+    except Exception:
+        choice = -1
+    return choice
 
 def move_selection_menu(pl_pokemon, width = 70):
     pl = pl_pokemon
@@ -76,8 +81,25 @@ def move_selection_menu(pl_pokemon, width = 70):
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print("#" * width)
     print('Your Choice : ', end="")
-    choice = input()
-    return int(choice)
+    choice = get_key()
+    try:
+        choice = int(choice)
+    except Exception:
+        choice = -1
+    return choice
+
+def a_sel_menu(pl_pokemon, opponent_pokemon):
+    pl = pl_pokemon
+    opponent = opponent_pokemon
+    sel_atk = -1
+    atk_id = '-'
+    while atk_id == '-':
+        b_display(pl, opponent_pokemon)
+        try:
+            sel_atk = move_selection_menu(pl)
+        except Exception:
+            sel_atk = -1
+        if 
 
 def b_display(pl_pokemon, opponent_pokemon):
     os.system('clear')
