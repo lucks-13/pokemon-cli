@@ -36,3 +36,14 @@ def gen_opt_y_move_down_to_x_sol(v_dist):
     ansi_seq = "\x1b[{0}E".format(v_dist)
     if v_dist < len(ansi_seq):
         ansi_seq = '\n' * v_dist
+
+def gen_ansi_to_c_movement(curr_x, curr_y, target_x, target_y):
+    ansi_seq = ""
+    if curr_y < target_y:
+        v_dist = target_y - curr_y
+        if curr_x == target_x:
+            if target_x != 0:
+                return "\x1b[{0}B".format(v_dist)
+            else:
+                return gen_opt_y_move_down_to_x_sol(v_dist)
+            
