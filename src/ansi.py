@@ -19,3 +19,11 @@ def gen_ansi_c_seq(curr_fg_color, curr_bg_color, new_fg_color, new_bg_color):
     color_codes = []
     if new_bg_color != curr_bg_color:
         if new_bg_color is None:
+            color_codes.append('49')
+        else:
+            color_codes += get_ansi_b_code(new_bg_color)
+    if new_fg_color != curr_fg_color:
+        if new_fg_color is None:
+            color_codes.append('39')
+        else:
+            color_codes += 
