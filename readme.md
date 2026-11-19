@@ -22,4 +22,26 @@ Wheneven i try to code sometimes i have been unknowningly using ao alot so this 
 
 # How to run this project.
 
-Clone the reposito
+Clone the repository:
+
+```
+git clone https://github.com/lucks-13/pokemon-cli.git
+```
+Run the project with.
+```
+python -m src.main
+```
+
+# Controls
+
+### W - Move Forward 
+### A - Move Backward 
+### S - Move Left
+### D - Move Right
+### E - Interact
+### M - Open the Menu
+
+rest all explore and find it out yourself.
+
+# 
+
