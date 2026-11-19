@@ -89,5 +89,18 @@ def p_trainer(pl_trainer, i_level = 0):
 
 def p_trainer_bs(pl_trainer, i_level = 0):
     img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
-        img_str = img_str.replace('\n', '\n' + '\t' * i_level)
-        print(img_str)
+    img_str = img_str.replace('\n', '\n' + '\t' * i_level)
+    print(img_str)
+
+def get_pokemon_t_marker(t_pokemon):
+    pokemon_marker = '@'
+    if t_pokemon.name == '-':
+        pokemon_marker = 'O'
+    elif t_pokemon.hp <= 0:
+        pokemon_marker = 'X'
+    return str(pokemon_marker)
+
+def trainer_t_box(pl_trainer, i_level = 0):
+    trainer = pl_trainer
+    t_marker = ""
+    for i in range(0, len(trainer))
