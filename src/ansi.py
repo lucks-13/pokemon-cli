@@ -81,6 +81,19 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
         pre_fg_color = None
         pre_bg_color = None
     if curr_c_pos is not None:
-        
+        cursor_x = curr_c_pos['x']
+        cursor_y = curr_c_pos['y']
+    else:
+        cursor_x  = 0
+        cursor_y  = 0
 
+    for row_index in range(height):
+        for col_index in range(width):
+            draw_char, pixel_rgba = get_pixel_func(pixels, col_index, row_index)
+            skip_pixel = False
+            if draw_char is not None:
+                alpha = pixel_rgba[3]
+                if alpha == 0:
+                    skip_pixel = True
+                elif alpha != 255 and bg_rgba 
     
