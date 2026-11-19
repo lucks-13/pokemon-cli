@@ -17,7 +17,8 @@ class Trainer:
             "Name : " + self.name + '\n'
             "Gender : " + text_gender + '\n'
             "ID : " + text_id + '\n'
-            "Map : " + str()
+            "Map : " + str(self.map_1) + '\n'
+            "X : " + str(self.x) + '\n'
             "--- Team ---\n" + text_team
         )
     
@@ -35,6 +36,9 @@ class Trainer:
         self.gender = gender
         self.trainer_id = t_id
         self.team = pokemon_team
+        self.map_1 = "route1"
+        self.x = 22
+        self.y = 6
 
 def save_game(trainer, file_path = "pokemon_cli_save.json"):
     team_data = []
@@ -44,6 +48,9 @@ def save_game(trainer, file_path = "pokemon_cli_save.json"):
         'name' : trainer.name,
         'gender' : trainer.gender,
         'id' : trainer.trainer_id,
+        'map_1' : trainer.map_1,
+        'p_x' : trainer.x,
+        'p_y' : trainer.y,
         'team' : team_data
     }
 
@@ -57,4 +64,5 @@ def load_game(file_path="pokemon_cli_save.json"):
     for pokemon_data in save_data['team']:
         team.append(dict_to_pokemon(pokemon_data))
     trainer = Trainer(save_data['name'], save_data['gender'], save_data['id'], team)
+    
     return trainer
