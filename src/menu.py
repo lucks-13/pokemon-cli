@@ -5,13 +5,13 @@ from termcolor import colored
 from . import world
 
 menu = [
-    ['*', '###################', '*'],
-    ['#', ' ','Help ','#'],
-    ['#', ' ','Pokedex ','#'],
-    ['#', ' ','Pokemon ','#'],
-    ['#', ' ','Return to the Game ','#'],
-    ['#', ' ','Exit Game ','#'],
-    ['*', '###################', '*']
+    ['*', '######################', '*'],
+    ['#', ' ','Help                ','#'],
+    ['#', ' ','Pokedex             ','#'],
+    ['#', ' ','Pokemon             ','#'],
+    ['#', ' ','Return to the Game  ','#'],
+    ['#', ' ','Exit Game           ','#'],
+    ['*', '######################', '*']
     ]
 
 options = {
@@ -23,14 +23,14 @@ options = {
 }
 
 help = [
-    ['*', '###################', '*'],
-    ['#', "W - Move Forward ", '*'],
-    ['#', "S - Move Backward ", '*'],
-    ['#', "A - Move Left ", '*'],
-    ['#', "D - Move Right ", '*'],
-    ['#', "E - Interact ", '*'],
-    ['#', "M - Open the Menu ", '*'],
-    ['*', '###################', '*']
+    ['*', '######################', '*'],
+    ['#', "W - Move Forward       ", '#'],
+    ['#', "S - Move Backward      ", '#'],
+    ['#', "A - Move Left          ", '#'],
+    ['#', "D - Move Right         ", '#'],
+    ['#', "E - Interact           ", '#'],
+    ['#', "M - Open the Menu      ", '#'],
+    ['*', '######################', '*']
     ]
 
 cursor_x = 1
@@ -53,7 +53,7 @@ def p_menu(menu = menu):
 
 def p_pokedex():
     print("No Pokemon has Discovered.")
-
+    
 def next_move():
     global cursor_x
     global cursor_y

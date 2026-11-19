@@ -11,7 +11,7 @@ class Move:
             "PP : "+ str(self.pp) + "/" + str(self.pp_max),
             "-" * display_width
         ]
-
+    
     def __str__(self):
         return '\n'.join(self.display_line(24))
 
