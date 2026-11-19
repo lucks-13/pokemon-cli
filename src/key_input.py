@@ -11,3 +11,16 @@ class _keyReader:
     def __call__(self):
         return self.key_reader()
 
+class _UnixKeyReader:
+    def __init__(self):
+        import tty, sys, termios
+
+    def __call__(self):
+        import tty, sys, termios
+        stdin_fd = sys.stdin.fileno()
+        terminal_settings = termios.tcgetattr(stdin_fd)
+        try:
+            tty.setraw(sys.stdin.fileno())
+            char = sys.stdin.read(1)
+        finally:
+            teernios
