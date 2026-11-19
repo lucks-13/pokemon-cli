@@ -65,6 +65,10 @@ def b_menu(width = 70):
 def move_selection_menu(pl_pokemon, width = 70):
     pl = pl_pokemon
 
+    print('#' * width)
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
+    print('#' + (' ' * ))
+
 
     print('Your Choice : ', end="")
     choice = input()
@@ -177,5 +181,9 @@ def b_trainer(pl_trainer, opponent_trainer):
     print(trainer_t_box(opponent))
     p_trainer(opponent, 10)
     p_pl_pokemon(pl_active_pokemon)
-    text_type()
+    text_type("\nOpponent trainer " + opponent.name + " sent out " + opponent_active_pokemon.name + "!")
+    input()
+    os.system('clear')
+    p_pl_pokemon(opponent_active_pokemon)
+    p_pl_pokemon(pl_active_pokemon)
 
