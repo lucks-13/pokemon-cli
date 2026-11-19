@@ -63,4 +63,6 @@ def gen_ansi_to_c_movement(curr_x, curr_y, target_x, target_y):
         ansi_seq += "\x1b[{0}D".format(curr_x - target_x)
     return ansi_seq
 
-def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current):
+def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = None, curr_c_pos = None, get_pixel_func = None, is_overdraw = False, x_offset = 0):
+    if get_pixel_func is None:
+        get_pixel_func = lambda pixels, x, y : (" ", pixe)
