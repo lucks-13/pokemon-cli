@@ -95,5 +95,15 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
                 alpha = pixel_rgba[3]
                 if alpha == 0:
                     skip_pixel = True
-                elif alpha != 255 and bg_rgba 
+                elif alpha != 255 and bg_rgba is not None:
+                    pixel_rgba = alpha_blend(pixel_rgba, bg_rgba)
+            if not skip_pixel:
+                rgb = pixel_rgba[:3]
+                if draw_char is None:
+                    draw_char = " "
+                    ansi_color = bg_ansi_color
+                else:
+                    ansi_color = get_ansi_color_for_rgb(rgb)
+                    if not is_overdraw and (draw_char == " ") and (ansi_color == bg_ansi_color):
+                        skip_pixel = True
     
