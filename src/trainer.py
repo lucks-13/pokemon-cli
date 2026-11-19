@@ -31,7 +31,15 @@ class Trainer:
             exit_bool = True
         return exit_bool
 
-    def get_first
+    def get_first_healthy_pokemon(self):
+        sel_pokemon_index = -1
+        for i in range(0, len(self.team)):
+            if self.team[i].name != '-' and self.team[i].hp > 0:
+                sel_pokemon_index = i
+                break
+        if sel_pokemon_index == -1:
+            print("The Trainer has no Healthy Pokemon.")
+        return self.team[sel_pokemon_index]
 
     def __init__(self, name, gender=male, t_id = random.randint(1, 2^32), pokemon_team = []):
         self.name = name
@@ -55,7 +63,7 @@ def save_game(trainer, file_path = "pokemon_cli_save.json"):
         'p_y' : trainer.y,
         'team' : team_data
     }
-
+    
     with open(file_path, 'w') as out_file:
         json.dump(save_data, out_file)
 
