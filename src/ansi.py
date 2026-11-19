@@ -129,4 +129,14 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
                             ansi_seq += bg_ansi_seq
                             pre_bg_color = bg_ansi_color
                         if cursor_y != row_index:
-                            ansi_seq += gen_ansi_to_c_movement()
+                            ansi_seq += gen_ansi_to_c_movement(0, cursor_y, 0, row_index)
+                            cursor_y = row_index
+                        ansi_seq += '\n'
+                        cursor_y += 1
+                        cursor_x = 0
+    return ansi_seq, {
+        'fg' : pre_fg_color,
+        'bg' : pre_bg_color,
+        'x' : cursor_x,
+        'y' : cursor_y
+    }
