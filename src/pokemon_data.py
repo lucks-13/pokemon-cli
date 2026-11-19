@@ -142,7 +142,7 @@ class Pokemon:
             self.hp = self.max_hp
         else:
             self.hp += restore_amount
-            
+
     def level_up(self):
         if self.level < 100:
             self.level += 1
