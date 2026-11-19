@@ -9,4 +9,8 @@ def text_type(text, delay = 0.10):
     words = text.split()
     for i in words:
         sys.stdout.write(i + " ")
-        sys.stdout.flush
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+def p_

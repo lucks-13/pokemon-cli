@@ -36,6 +36,7 @@ def gen_opt_y_move_down_to_x_sol(v_dist):
     ansi_seq = "\x1b[{0}E".format(v_dist)
     if v_dist < len(ansi_seq):
         ansi_seq = '\n' * v_dist
+    return ansi_seq
 
 def gen_ansi_to_c_movement(curr_x, curr_y, target_x, target_y):
     ansi_seq = ""
