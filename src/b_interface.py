@@ -51,4 +51,11 @@ def p_pl_pokemon(pl_pokemon, i_level = 10):
 def b_menu(width = 70):
     print('#' * width)
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
-    print('#' + " 0) Fight".center(int(width / 2 - 2)) + '#' + " 1) Bag")
+    print('#' + " 0) Fight".center(int(width / 2 - 2)) + '#' + " 1) Bag".center(int(width / 2 - 1)) + '#')
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
+    print('#' * width)
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
+    print('#' + )
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
+    print('#' * width)
+
