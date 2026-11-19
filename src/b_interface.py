@@ -114,9 +114,24 @@ def b_display(pl_pokemon, opponent_pokemon):
 def pokemon_fainted(pl_pokemon):
     return pl_pokemon.hp <= 0
 
-def r_b_algo(pl_pokemon, opponent_pokemon, wild):
+def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
     pl = pl_pokemon
     opponent = opponent_pokemon
+    sel_menu = 0
+    max = 0
+    opponent_move_index = 0
+    pokemon_fainted = False
+    escape_attempts = 0
+    while not pokemon_fainted:
+        while True:
+            b_display(pl, opponent)
+            print("what should it do " + pl.name + "?")
+            sel_menu = b_menu()
+            if sel_menu in [0, 1, 2, 3]:
+                break
+        if sel_menu == 0:
+            while True:
+                
 
 def p_trainer(pl_trainer, i_level = 0):
     img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
