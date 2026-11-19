@@ -64,5 +64,18 @@ def b_menu(width = 70):
 
 def move_selection_menu(pl_pokemon, width = 70):
     pl = pl_pokemon
-    choice = in
+
+
+    print('Your Choice : ', end="")
+    choice = input()
     return int(choice)
+
+def b_display(pl_pokemon, opponent_pokemon):
+    os.system('clear')
+    p_opp_pokemon(opponent_pokemon)
+    p_pl_pokemon(pl_pokemon)
+
+def pokemon_fainted(pl_pokemon):
+    return pl_pokemon.hp <= 0
+
+def r_b_algo(pl_pokemon, oppo)
