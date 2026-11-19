@@ -111,5 +111,12 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
                         raise ValueError("Not allowing Multi Character draw Strings")
                     offset_x = x_offset + col_index
                     if (cursor_x != offset_x) or (cursor_y != row_index):
-                        ansi_seq += gen_ansi_to_c_movement(cursor_x, )
-    
+                        ansi_seq += gen_ansi_to_c_movement(cursor_x, cursor_y, offset_x, row_index)
+                        cursor_x = offset_x
+                        cursor_y = row_index
+                    if draw_char == " ":
+                        ansi_seq += get_ansi_b_seq(pre_fg_color, pre_bg_color, pre_fg_color, ansi_color):
+                        pre_bg_color = ansi_seq
+                    else:
+                        ansi_seq += get_ansi_b_seq(pre_fg_color, pre_bg_color, ansi_color, bg_ansi_color)
+                        
