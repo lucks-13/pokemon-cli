@@ -107,7 +107,7 @@ class Pokemon:
             "\t HP : " + str(self.hp) + '/' + str(self.max_hp),
             "-" * display_width
         ]
-
+    
     def __init__(self, pokemon_number=0, level=5, trainer_id=0):
         if pokemon_number in pokemon_db:
             self.name = pokemon_db[pokemon_number]
@@ -142,7 +142,7 @@ class Pokemon:
             self.hp = self.max_hp
         else:
             self.hp += restore_amount
-
+            
     def level_up(self):
         if self.level < 100:
             self.level += 1
