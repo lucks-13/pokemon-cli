@@ -167,7 +167,22 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                     if first == pl:
                         atk_id = pl.attack(opponent, max)
                         escape_attemps = 0
-                        text_type(pl.name + " used " + at)
+                        text_type(pl.name + " used " + atk_id + ".")
+                        get_key()
+                        p_effect_message(pl, opponent, max)
+                        if opponent.hp <= 0:
+                            return 0
+                        atk_id = opponent.attack_1(pl)
+                        text_type("Pokemon " + opponent.name + " opponent used " + atk_id + ".")
+                        get_key()
+                        p_effect_message(pl, opponent, max)
+                    else:
+                        atk_id = opponent.attack_1(pl)
+                        if opponent.hp <= 0:
+                            return 0
+                        if pl.hp <= 0:
+                            return -1
+                
 
 
 def p_trainer(pl_trainer, i_level = 0):
