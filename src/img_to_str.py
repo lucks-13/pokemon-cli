@@ -1,10 +1,10 @@
 from . import ansi
 from PIL import Image
 
-def load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio):
+def load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio, img_dir="img/"):
     if target_aspect_ratio is None:
         target_aspect_ratio = 1.0
-    img = Image.open(img_path)
+    img = Image.open(img_dir + img_path)
     if img.mode !=  'RGBA':
         img = img.convert('RGBA')
     if max_len is not None or target_aspect_ratio != 1.0:
@@ -24,7 +24,7 @@ def load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio):
 def p_img_str(img):
     for char in img:
         print(char, end="")
-        
+
 def img_to_str(img_path, max_len = 45, target_aspect_ratio = 0.5):
     antialias = False
     try:

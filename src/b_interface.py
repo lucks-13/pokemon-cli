@@ -285,19 +285,24 @@ def b_trainer(pl_trainer, opponent_trainer):
     p_trainer_bs(trainer)
     print(trainer_t_box(trainer, 1, 10))
     pl_active_pokemon = trainer.get_first_healthy_pokemon()
-    opponent_active_pokemon = opponent.
-
-
-    
+    opponent_active_pokemon = opponent.get_first_healthy_pokemon()
     text_type("\nGo " + pl_active_pokemon.name + "!")
-    input()
+    get_key()
     os.system('clear')
     print(trainer_t_box(opponent))
     p_trainer(opponent, 10)
     p_pl_pokemon(pl_active_pokemon)
     text_type("\nOpponent trainer " + opponent.name + " sent out " + opponent_active_pokemon.name + "!")
-    input()
+    get_key()
     os.system('clear')
     p_pl_pokemon(opponent_active_pokemon)
     p_pl_pokemon(pl_active_pokemon)
+    winner = r_b_algo(pe, pr, False)
+    if winner == -1:
+        text_type(pe.name + " fainted.")
+        get_key()
+    elif winner == 1:
+        text_type(pr.name + " opponent fainted.")
+        get_key()
+    
 

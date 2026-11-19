@@ -31,6 +31,8 @@ class Trainer:
             exit_bool = True
         return exit_bool
 
+    def get_first
+
     def __init__(self, name, gender=male, t_id = random.randint(1, 2^32), pokemon_team = []):
         self.name = name
         self.gender = gender
