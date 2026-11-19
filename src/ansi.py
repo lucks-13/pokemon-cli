@@ -1,4 +1,4 @@
-from .g_utils import alpha_blend
+from g_utils import alpha_blend
 
 def get_ansi_color_for_rgb(rgb):
     red_level = int(round((rgb[0] / 255.0) * 5))
@@ -116,25 +116,25 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
                         cursor_x = offset_x
                         cursor_y = row_index
                     if draw_char == " ":
-                        ansi_seq += get_ansi_b_seq(pre_fg_color, pre_bg_color, pre_fg_color, ansi_color)
-                        pre_bg_color = ansi_seq
+                        ansi_seq += gen_ansi_c_seq(pre_fg_color, pre_bg_color, pre_fg_color, ansi_color)
+                        pre_bg_color = ansi_color
                     else:
-                        ansi_seq += get_ansi_b_seq(pre_fg_color, pre_bg_color, ansi_color, bg_ansi_color)
+                        ansi_seq += gen_ansi_c_seq(pre_fg_color, pre_bg_color, ansi_color, bg_ansi_color)
                         pre_fg_color = ansi_color
                         pre_bg_color = bg_ansi_color
                     ansi_seq += draw_char
                     cursor_x += 1
-                if (row_index + 1) != height:
-                    if not is_overdraw:
-                        if pre_bg_color != bg_ansi_color:
-                            ansi_seq += bg_ansi_seq
-                            pre_bg_color = bg_ansi_color
-                        if cursor_y != row_index:
-                            ansi_seq += gen_ansi_to_c_movement(0, cursor_y, 0, row_index)
-                            cursor_y = row_index
-                        ansi_seq += '\n'
-                        cursor_y += 1
-                        cursor_x = 0
+        if (row_index + 1) != height:
+            if not is_overdraw:
+                if pre_bg_color != bg_ansi_color:
+                    ansi_seq += bg_ansi_seq
+                    pre_bg_color = bg_ansi_color
+                if cursor_y != row_index:
+                    ansi_seq += gen_ansi_to_c_movement(0, cursor_y, 0, row_index)
+                    cursor_y = row_index
+                ansi_seq += '\n'
+                cursor_y += 1
+                cursor_x = 0
     return ansi_seq, {
         'fg' : pre_fg_color,
         'bg' : pre_bg_color,

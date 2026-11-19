@@ -104,7 +104,7 @@ def a_sel_menu(pl_pokemon, opponent_pokemon):
             atk_id = pl.attack(opponent, sel_atk)
     text_type(pl.name + " used " + atk_id + " against Pokemon " + opponent.name + " opponent.")
     time.sleep(0.25)
-    p_effect_message(pe, pr, sel_atk)
+    p_effect_message(pl, opponent, sel_atk)
     get_key()
 
 def b_display(pl_pokemon, opponent_pokemon):
@@ -166,22 +166,30 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                 if not retry:
                     if first == pl:
                         atk_id = pl.attack(opponent, max)
-                        escape_attemps = 0
+                        escape_attempts = 0
                         text_type(pl.name + " used " + atk_id + ".")
                         get_key()
                         p_effect_message(pl, opponent, max)
                         if opponent.hp <= 0:
-                            return 0
+                            return 1
                         atk_id = opponent.attack_1(pl)
                         text_type("Pokemon " + opponent.name + " opponent used " + atk_id + ".")
                         get_key()
-                        p_effect_message(pl, opponent, max)
-                    else:
-                        atk_id = opponent.attack_1(pl)
-                        if opponent.hp <= 0:
-                            return 0
                         if pl.hp <= 0:
                             return -1
+                    else:
+                        atk_id = opponent.attack_1(pl)
+                        text_type("Pokemon " + opponent.name + " opponent used " + atk_id + ".")
+                        get_key()
+                        if pl.hp <= 0:
+                            return -1
+                        atk_id = pl.attack(opponent, max)
+                        escape_attempts = 0
+                        text_type(pl.name + " used " + atk_id + ".")
+                        get_key()
+                        p_effect_message(pl, opponent, max)
+                        if opponent.hp <= 0:
+                            return 1
                 break
         if sel_menu == 1:
             text_type("Bag is not implemented yet.")
@@ -193,7 +201,7 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
             if wild_pokemon:
                 A = pl.speed
                 B = opponent.speed
-                C = escape_attemps
+                C = escape_attempts
                 if B == 0:
                     B = 1
                 F = ((A * 128) / B + 30 * C) % 256
@@ -204,7 +212,7 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                     pokemon_fainted = True
                 else:
                     text_type("You cannot escape from the battle !")
-                    escape_attemps += 1
+                    escape_attempts += 1
                     get_key()
             else:
                 text_type("You cannot escape from a battle against a trainer !")
@@ -266,7 +274,7 @@ def b_wild_pokemon(pl_trainer, opponent_pokemon):
         text_type(pl_active_pokemon.name + " fainted.")
         get_key()
     elif winner == 1:
-        text_type(pr.name + " opponent fainted.")
+        text_type(opponent_pokemon.name + " opponent fainted.")
         get_key()
 
 def b_trainer(pl_trainer, opponent_trainer):
@@ -297,12 +305,12 @@ def b_trainer(pl_trainer, opponent_trainer):
     os.system('clear')
     p_pl_pokemon(opponent_active_pokemon)
     p_pl_pokemon(pl_active_pokemon)
-    winner = r_b_algo(pe, pr, False)
+    winner = r_b_algo(pl_active_pokemon, opponent_active_pokemon, False)
     if winner == -1:
-        text_type(pe.name + " fainted.")
+        text_type(pl_active_pokemon.name + " fainted.")
         get_key()
     elif winner == 1:
-        text_type(pr.name + " opponent fainted.")
+        text_type(opponent_active_pokemon.name + " opponent fainted.")
         get_key()
     
 

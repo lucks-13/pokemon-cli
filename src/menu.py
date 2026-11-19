@@ -2,7 +2,7 @@ import os
 import sys
 import copy
 from termcolor import colored
-from . import world
+import world
 
 menu = [
     ['*', '######################', '*'],
@@ -59,7 +59,7 @@ def next_move():
     global cursor_y
     while True:
         p_menu()
-        key_pressed = input()
+        key_pressed = input().strip().lower()
         if key_pressed == 'w':
             if menu[cursor_x -1][cursor_y] == ' ':
                 menu[cursor_x][cursor_y] = ' '
@@ -83,6 +83,8 @@ def next_move():
                 p_pokemon()
                 input()
             elif menu[options['bckgme']][1] == '>':
+                if world.in_game:
+                    return
                 world.next_move(world.map)
             elif menu[options['exit']][1] == '>':
                 exit_game()

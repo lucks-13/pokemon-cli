@@ -39,13 +39,14 @@ class Trainer:
                 break
         if sel_pokemon_index == -1:
             print("The Trainer has no Healthy Pokemon.")
+            return None
         return self.team[sel_pokemon_index]
 
-    def __init__(self, name, gender=male, t_id = random.randint(1, 2^32), pokemon_team = []):
+    def __init__(self, name, gender=male, t_id = random.randint(1, 2**32), pokemon_team = None):
         self.name = name
         self.gender = gender
         self.trainer_id = t_id
-        self.team = pokemon_team
+        self.team = [] if pokemon_team is None else pokemon_team
         self.map_1 = "route1"
         self.x = 22
         self.y = 6

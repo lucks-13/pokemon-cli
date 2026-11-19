@@ -59,7 +59,7 @@ class Pokemon:
                 "Level : " + str(self.level) + '\n'
                 "HP : " + str(self.hp) + '\n'
                 "Max HP : " + str(self.max_hp) + '\n'
-                "Attack : " + str(self.attach_stat) + '\n'
+                "Attack : " + str(self.attack_stat) + '\n'
                 "Special Attack : " + str(self.s_attack) + '\n'
                 "Defence : " + str(self.defense) + '\n'
                 "Special Defence : " + str(self.s_defense) + '\n'
@@ -174,7 +174,7 @@ class Pokemon:
             if selected_move.category == physical:
                 damage = int(0.01 * stab_bonus * effect_mutiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
             elif selected_move.category == special:
-                damage = int(0.01 * stab_bonus * effect_mutiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
+                damage = int(0.01 * stab_bonus * effect_mutiplier * random_factor * (((0.2 * self.level + 1) * self.s_attack * selected_move.power) / (25 * opponent.s_defense) + 2))
             if opponent.hp <= damage:
                 opponent.hp = 0
             else:

@@ -32,15 +32,20 @@ class _WindowsKeyReader:
 
     def __call__(self):
         import msvcrt
-        return msvcrt.getch()
+        char = msvcrt.getch()
+        return char.decode('utf-8', errors='ignore') if isinstance(char, bytes) else char
 
 class _MacKeyReader:
-    import Carbon
-    if Carbon.Evt.EvenAvail(0x0008)[0] == 0:
-        return ''
-    else:
-        e_type, e_message, e_time, e_position, mod = Carbon.Evt.GetNextEvent(0x0008)[1]
-        return chr(e_message & 0x000000FF)
+    def __init__(self):
+        import Carbon
+
+    def __call__(self):
+        import Carbon
+        if Carbon.Evt.EvenAvail(0x0008)[0] == 0:
+            return ''
+        else:
+            e_type, e_message, e_time, e_position, mod = Carbon.Evt.GetNextEvent(0x0008)[1]
+            return chr(e_message & 0x000000FF)
 
 def get_key():
     key_reader = _keyReader()

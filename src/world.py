@@ -2,7 +2,7 @@ import os
 import platform
 # import fabulous.color import blink, plain
 import copy
-from . import menu
+import menu
 from numpy import random
 from colored import fg, bg, attr
 
@@ -51,6 +51,7 @@ elements = {
 }
 
 l_step = elements['empty']
+in_game = False
 p_x = 22
 p_y = 6
 map[p_x][p_y] = elements['player']
@@ -76,7 +77,7 @@ def map_color(map):
             elif map[i][col] == elements['herb']:
                 c_map[i][col] = fg('dark_green') + map[i][col] + attr(0)
             elif map[i][col] == elements['jump']:
-                c_map[i][col] = fg('light_grey') + map[i][col] + attr(0)
+                c_map[i][col] = fg('light_gray') + map[i][col] + attr(0)
             elif map[i][col] == elements['close']:
                 c_map[i][col] = fg('red') + map[i][col] + attr(0)
             elif map[i][col] == elements['post']:
@@ -93,9 +94,12 @@ def next_move(map):
     global p_x
     global p_y
     global l_step
+    global in_game
+    in_game = True
     l_battle = False
+    update_map(map)
     while True:
-        key_pressed = input()
+        key_pressed = input().strip().lower()
         player_move = False
         if key_pressed == 'w':
             if map[p_x -1][p_y] in (elements['empty'], elements['herb']):
@@ -111,12 +115,12 @@ def next_move(map):
                 p_x = p_x +1
                 map[p_x][p_y] = elements['player']
                 player_move = True
-        elif map[p_x +1][p_y] is elements['jump']:
-            map[p_x][p_y] = l_step
-            l_step = map[p_x +2][p_y]
-            p_x = p_x +2
-            map[p_x][p_y] = elements['player']
-            player_move = True
+            elif map[p_x +1][p_y] is elements['jump']:
+                map[p_x][p_y] = l_step
+                l_step = map[p_x +2][p_y]
+                p_x = p_x +2
+                map[p_x][p_y] = elements['player']
+                player_move = True
         elif key_pressed == 'a':
             if map[p_x][p_y -1] in (elements['empty'], elements['herb']):
                 map[p_x][p_y] = l_step
@@ -151,6 +155,7 @@ def next_move(map):
                 input()
             elif c_cell is elements['tree']:
                 print("Its a Tree", end="")
+                input()
             elif c_cell is elements['close']:
                 print("The Path is blocked", end="")
                 input()

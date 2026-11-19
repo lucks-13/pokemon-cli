@@ -1,4 +1,4 @@
-from . import ansi
+import ansi
 from PIL import Image
 
 def load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio, img_dir="img/"):
