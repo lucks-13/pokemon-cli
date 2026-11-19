@@ -169,7 +169,10 @@ class Pokemon:
                 stab_bonus = 1.5
             else:
                 stab_bonus = 1
-            
+            effect_mutiplier = type_effect[selected_move.move_type][opponent.type]
+            random_factor = random.randint(85, 101)
+            if selected_move.category == physical:
+                damage = int()
 
 
 
