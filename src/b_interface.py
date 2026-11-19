@@ -182,7 +182,21 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                             return 0
                         if pl.hp <= 0:
                             return -1
-                
+                break
+        if sel_menu == 1:
+            text_type("Bag is not implemented yet.")
+            get_key()
+        if sel_menu == 2:
+            text_type("This is your last Pokemon!")
+            get_key()
+        if sel_menu == 3:
+            if wild_pokemon:
+                A = pl.speed
+                B = opponent.speed
+                C = escape_attemps
+                if B == 0:
+                    B = 1
+                F = ((A * 128) / )
 
 
 def p_trainer(pl_trainer, i_level = 0):
