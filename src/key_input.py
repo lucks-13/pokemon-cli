@@ -23,4 +23,20 @@ class _UnixKeyReader:
             tty.setraw(sys.stdin.fileno())
             char = sys.stdin.read(1)
         finally:
-            teernios
+            termios.tcsetattr(stdin_fd, termios.TCSADRAIN, terminal_settings)
+        return char
+
+class _WindowsKeyReader:
+    def __init__(self):
+        import msvcrt
+
+    def __call__(self):
+        import msvcrt
+        return msvcrt.getch()
+
+class _MacKeyReader:
+    import Carbon
+    if Carbon.Evt.EvenAvail(0x0008)[0] == 0:
+        return ''
+    else:
+        e
