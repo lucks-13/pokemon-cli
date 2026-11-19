@@ -32,7 +32,7 @@ class Pokemon:
         else:
             sel_move = available_moves[random.randint(0, len(available_moves))]
             return self.attack(opponent, sel_move)
-
+        
     def restore_move_pp(self, move_index, restore_pp=100):
         if(self.moves[move_index].pp + restore_pp) > self.moves[move_index].pp_max:
             self.moves[move_index].pp = self.moves[move_index].pp_max
