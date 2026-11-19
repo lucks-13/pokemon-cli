@@ -55,7 +55,14 @@ def b_menu(width = 70):
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print('#' * width)
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
-    print('#' + )
+    print('#' + " 2) Switch Pokemon".center(int(width / 2 - 2)) + '#' + " 3) Run".center(int(width / 2 - 1)) + '#')
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print('#' * width)
+    print('Your Choice : ', end="")
+    choice = input()
+    return int(choice)
 
+def move_selection_menu(pl_pokemon, width = 70):
+    pl = pl_pokemon
+    choice = in
+    return int(choice)
