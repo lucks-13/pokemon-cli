@@ -100,7 +100,7 @@ def get_pokemon_t_marker(t_pokemon):
         pokemon_marker = 'X'
     return str(pokemon_marker)
 
-def trainer_t_box(pl_trainer, i_level = 0):
+def trainer_t_box(pl_trainer, orientation = 0, i_level = 0):
     trainer = pl_trainer
     t_marker = ""
     for i in range(0, len(trainer.team)):
@@ -108,3 +108,9 @@ def trainer_t_box(pl_trainer, i_level = 0):
     e_t_marker = ""
     for i in range(0, 6 - len(trainer.team)):
         e_t_marker += '0 '
+    t_marker = e_t_marker + t_marker
+    if orientation == 0:
+        status_box = ('\n# ' + t_marker.center(30) + '\n' + ('#' * 32))
+    else:
+        "".join(reversed(t_marker))
+        status_box = ('\n' + t_marker.center(31) + '#\n')
