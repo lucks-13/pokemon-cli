@@ -154,5 +154,16 @@ def b_trainer(pl_trainer, opponent_trainer):
     print(trainer_t_box(opponent))
     p_trainer(opponent, 10)
     p_trainer_bs(trainer)
-    print()
+    print(trainer_t_box(trainer, 1, 10))
+    selected_pokemon_index = -1
+    for i in range(0, len(trainer.team)):
+        if trainer.team[i].name != '-' and trainer.team[i].hp > 0:
+            selected_pokemon_index = i
+            break
+    if selected_pokemon_index == -1:
+        print("The Trainer has no Healthy Pokemon")
+    pl_active_pokemon = trainer.team[selected_pokemon_index]
+    selected_pokemon_index = -1
+    for i in range(0, len(opponent.team)):
+        if opponent.team
 
