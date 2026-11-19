@@ -57,4 +57,10 @@ def gen_ansi_to_c_movement(curr_x, curr_y, target_x, target_y):
             return "\x1b[{0}F".format(curr_y - target_y)
         else:
             ansi_seq += "\x1b[{0}A".format(curr_y - target_y)
-    if curr_x < 
+    if curr_x < target_x:
+        ansi_seq += "\x1b[{0}C".format(target_x - curr_x)
+    elif curr_x > target_x:
+        ansi_seq += "\x1b[{0}D".format(curr_x - target_x)
+    return ansi_seq
+
+def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current):
