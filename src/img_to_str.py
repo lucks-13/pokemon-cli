@@ -32,4 +32,14 @@ def img_to_str(img_path, max_len = 45, target_aspect_ratio = 0.5):
     except:
         max_len = 100.0
     try:
-        target_aspect_ratio = 
+        target_aspect_ratio = float(target_aspect_ratio)
+    except:
+        target_aspect_ratio = 1.0
+    try:
+        img = load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio)
+    except IOError:
+        exit("File not found : " + img_path)
+    pixel = img.load()
+    width, height = img.size
+    bg_color = None
+    
