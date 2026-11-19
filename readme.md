@@ -9,4 +9,17 @@ This project currently include pokemon data, moves, trainers, a map, a main menu
 
 # What my project does.
 
-This python 
+This python cli game lets you to :
+* Move around small map
+* Interact with object on map
+* View Pokemon and Pokedex Message
+* Create and Save a Trainer
+and much more.
+
+# Why i made this project.
+
+Wheneven i try to code sometimes i have been unknowningly using ao alot so this project help me to find my raw power.
+
+# How to run this project.
+
+Clone the reposito
