@@ -156,7 +156,7 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                     first = opponent
                     second = pl
                 else:
-                    luck = random.randint(0, 1):
+                    luck = random.randint(0, 1)
                     if luck == 0:
                         first = pl
                         second = opponent
