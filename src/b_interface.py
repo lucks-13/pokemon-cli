@@ -103,4 +103,8 @@ def get_pokemon_t_marker(t_pokemon):
 def trainer_t_box(pl_trainer, i_level = 0):
     trainer = pl_trainer
     t_marker = ""
-    for i in range(0, len(trainer))
+    for i in range(0, len(trainer.team)):
+        t_marker += get_pokemon_t_marker(trainer.team[i]) + ' '
+    e_t_marker = ""
+    for i in range(0, 6 - len(trainer.team)):
+        e_t_marker += '0 '
