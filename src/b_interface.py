@@ -48,12 +48,7 @@ def p_pl_pokemon(pl_pokemon, i_level = 10):
     print(img_str)
     print(status_box.replace('\n', '\n' + '\t' * i_level))
 
-
-    img_str = img_str.replace('\n', '\n' + '\t' * i_level)
-    capture_marker = '@'
-    capture_marker = ' '
-    print('#' * 32)
-    print('# ' + (pl_pokemon.name + ' ' + g_name[pl_pokemon.gender]).ljust(20) + ("Lv : " + str(pl_pokemon.level)).ljust(8) + ' #')
-        print('# ' + capture_marker + ' HP : (' + health_bar + ') ####')
-        print('#' * 32)
-        print(img_str)
+def b_menu(width = 70):
+    print('#' * width)
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
+    print('#' + " 0) Fight".center(int(width / 2 - 2)) + '#' + " 1) Bag")
