@@ -1,6 +1,7 @@
 import os
 import time
 import sys
+import random
 
 from pokemon_type import g_name, type_name, type_effect
 from img_to_str import img_to_str
@@ -151,7 +152,23 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                 if pl.speed > opponent.speed:
                     first = pl
                     second = opponent
-                elif pl.speed
+                elif pl.speed < opponent.speed:
+                    first = opponent
+                    second = pl
+                else:
+                    luck = random.randint(0, 1):
+                    if luck == 0:
+                        first = pl
+                        second = opponent
+                    else:
+                        first = opponent
+                        second = pl
+                if not retry:
+                    if first == pl:
+                        atk_id = pl.attack(opponent, max)
+                        escape_attemps = 0
+                        text_type(pl.name + " used " + at)
+
 
 def p_trainer(pl_trainer, i_level = 0):
     img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
