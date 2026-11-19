@@ -123,4 +123,11 @@ def trainer_t_box(pl_trainer, orientation = 0, i_level = 0):
 def b_wild_pokemon(pl_trainer, opponent_pokemon):
     os.system('clear')
     p_opp_pokemon(opponent_pokemon)
+    p_trainer_bs(pl_trainer)
+    text_type('\nA Wild Pokemon has appeared !')
+    input()
+    os.system('clear')
+    p_opp_pokemon(opponent_pokemon)
+    p_trainer_bs(pl_trainer)
+    selected_pokemon_index = i
     
