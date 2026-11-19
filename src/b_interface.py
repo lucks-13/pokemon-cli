@@ -131,7 +131,16 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                 break
         if sel_menu == 0:
             while True:
-                
+                b_display(pl, opponent)
+                print("what should it do " + pl.name + "?")
+                max = move_selection_menu(pl)
+                if max not in [0, 1, 2, 3]:
+                    break
+                moves_with_pp = [0, 1, 2, 3]
+                for i in range(0, 4):
+                    if pl.moves[i].pp == 0:
+                        moves_with_pp.remove(i)
+                retry = False
 
 def p_trainer(pl_trainer, i_level = 0):
     img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
