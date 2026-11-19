@@ -13,4 +13,6 @@ def text_type(text, delay = 0.10):
         time.sleep(delay)
     print()
 
-def p_
+def p_effect_message(pl_pokemon, opponent_pokemon, move_index):
+    if pl_pokemon.moves[move_index].name != '-':
+        effect = type_effect[pl_pokemon.moves[move_index].move_type]
