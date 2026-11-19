@@ -67,7 +67,10 @@ def move_selection_menu(pl_pokemon, width = 70):
 
     print('#' * width)
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
-    print('#' + (' ' * ))
+    print('#' + (' 0) ' + pl.moves[0].name).ljust(int(width / 2 - 2)) + '#' + (" 1) " + pl.moves[1].name).ljust(int(width / 2 - 1)) + '#')
+    print('#' + )
+    
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
 
 
     print('Your Choice : ', end="")
