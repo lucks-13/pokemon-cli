@@ -78,4 +78,16 @@ def b_display(pl_pokemon, opponent_pokemon):
 def pokemon_fainted(pl_pokemon):
     return pl_pokemon.hp <= 0
 
-def r_b_algo(pl_pokemon, oppo)
+def r_b_algo(pl_pokemon, opponent_pokemon):
+    pl = pl_pokemon
+    opponent = opponent_pokemon
+
+def p_trainer(pl_trainer, i_level = 0):
+    img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
+    img_str = img_str.replace('\n', '\n' + '\t' * i_level)
+    print(img_str)
+
+def p_trainer_bs(pl_trainer, i_level = 0):
+    img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
+        img_str = img_str.replace('\n', '\n' + '\t' * i_level)
+        print(img_str)
