@@ -68,7 +68,8 @@ def move_selection_menu(pl_pokemon, width = 70):
     print('#' * width)
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print('#' + (' 0) ' + pl.moves[0].name).ljust(int(width / 2 - 2)) + '#' + (" 1) " + pl.moves[1].name).ljust(int(width / 2 - 1)) + '#')
-    print('#' + (" " + type_name[pl.moves[0].move_type].ljust(12) + " PP : " + str(pl.moves[0].pp) + "/" + str(pl.moves[0].pp_max)).ljust(int(width / 2 - )))
+    print('#' + (" " + type_name[pl.moves[0].move_type].ljust(12) + " PP : " + str(pl.moves[0].pp) + "/" + str(pl.moves[0].pp_max)).ljust(int(width / 2 - 2)) + '#' + (" " + type_name[pl.moves[1].move_type].ljust(12) + " PP : " + str(pl.moves[1].pp) + '/' + str(pl.moves[1].pp_max)).ljust(int(width / 2 - 1)) + '#')
+    print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
 
