@@ -46,4 +46,15 @@ def gen_ansi_to_c_movement(curr_x, curr_y, target_x, target_y):
                 return "\x1b[{0}B".format(v_dist)
             else:
                 return gen_opt_y_move_down_to_x_sol(v_dist)
-            
+        else:
+            if target_x != 0:
+                ansi_seq += gen_opt_y_move_down_to_x_sol(v_dist)
+                curr_x = 0
+            else:
+                return gen_opt_y_move_down_to_x_sol(v_dist)
+    elif curr_y > target_y:
+        if target_x == 0:
+            return "\x1b[{0}F".format(curr_y - target_y)
+        else:
+            ansi_seq += "\x1b[{0}A".format(curr_y - target_y)
+    if curr_x < 
