@@ -129,5 +129,19 @@ def b_wild_pokemon(pl_trainer, opponent_pokemon):
     os.system('clear')
     p_opp_pokemon(opponent_pokemon)
     p_trainer_bs(pl_trainer)
-    selected_pokemon_index = i
+    selected_pokemon_index = -1
+    for i in range(0, len(pl_trainer.team)):
+        if pl_trainer.team[i].name != '-' and pl_trainer.team[i].hp > 0:
+            selected_pokemon_index = i
+            break
+    if selected_pokemon_index == -1:
+        print("The trainer has no healthy Pokemon")
+    pl_active_pokemon = pl_trainer.team[selected_pokemon_index]
+    text_type('\nGo ' + pl_active_pokemon.name + '!')
+    input()
+
+def b_trainer(pl_trainer, opponent_trainer):
+    trainer = pl_trainer
+    opponent = opponent_trainer
     
+
