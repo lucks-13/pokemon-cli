@@ -42,4 +42,6 @@ def img_to_str(img_path, max_len = 45, target_aspect_ratio = 0.5):
     pixel = img.load()
     width, height = img.size
     bg_color = None
-    
+    img_op = ansi.gen_pixels_to_ansi(pixel, width, height, bg_color)[0]
+    img_op += "\x1b[0m\n"
+    return img_op
