@@ -99,7 +99,12 @@ def a_sel_menu(pl_pokemon, opponent_pokemon):
             sel_atk = move_selection_menu(pl)
         except Exception:
             sel_atk = -1
-        if 
+        if sel_atk in [0, 1, 2, 3]:
+            atk_id = pl.attack(opponent, sel_atk)
+    text_type(pl.name + " used " + atk_id + " against Pokemon " + opponent.name + " opponent.")
+    time.sleep(0.25)
+    p_effect_message(pe, pr, sel_atk)
+    get_key()
 
 def b_display(pl_pokemon, opponent_pokemon):
     os.system('clear')
@@ -109,7 +114,7 @@ def b_display(pl_pokemon, opponent_pokemon):
 def pokemon_fainted(pl_pokemon):
     return pl_pokemon.hp <= 0
 
-def r_b_algo(pl_pokemon, opponent_pokemon):
+def r_b_algo(pl_pokemon, opponent_pokemon, wild):
     pl = pl_pokemon
     opponent = opponent_pokemon
 
