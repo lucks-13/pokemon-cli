@@ -106,4 +106,10 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
                     ansi_color = get_ansi_color_for_rgb(rgb)
                     if not is_overdraw and (draw_char == " ") and (ansi_color == bg_ansi_color):
                         skip_pixel = True
+                if not skip_pixel:
+                    if len(draw_char) > 1:
+                        raise ValueError("Not allowing Multi Character draw Strings")
+                    offset_x = x_offset + col_index
+                    if (cursor_x != offset_x) or (cursor_y != row_index):
+                        ansi_seq += gen_ansi_to_c_movement(cursor_x, )
     
