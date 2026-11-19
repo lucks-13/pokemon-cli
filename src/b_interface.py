@@ -207,7 +207,8 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                     escape_attemps += 1
                     get_key()
             else:
-                text_type("You cannot escape from a battle ")
+                text_type("You cannot escape from a battle against a trainer !")
+                get_key()
 
 
 def p_trainer(pl_trainer, i_level = 0):
@@ -253,15 +254,21 @@ def b_wild_pokemon(pl_trainer, opponent_pokemon):
     p_opp_pokemon(opponent_pokemon)
     p_trainer_bs(pl_trainer)
     text_type('\nA Wild Pokemon has appeared !')
-    input()
+    get_key()
     os.system('clear')
     p_opp_pokemon(opponent_pokemon)
     p_trainer_bs(pl_trainer)
+
+    pl_active_pokemon = pl_trainer.get_firs
+
+
     selected_pokemon_index = -1
     for i in range(0, len(pl_trainer.team)):
         if pl_trainer.team[i].name != '-' and pl_trainer.team[i].hp > 0:
             selected_pokemon_index = i
             break
+    
+    
     if selected_pokemon_index == -1:
         print("The trainer has no healthy Pokemon")
     pl_active_pokemon = pl_trainer.team[selected_pokemon_index]
