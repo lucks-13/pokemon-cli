@@ -113,4 +113,8 @@ def trainer_t_box(pl_trainer, orientation = 0, i_level = 0):
         status_box = ('\n# ' + t_marker.center(30) + '\n' + ('#' * 32))
     else:
         "".join(reversed(t_marker))
-        status_box = ('\n' + t_marker.center(31) + '#\n')
+        status_box = ('\n' + t_marker.center(31) + '#\n' + ('#' * 32))
+    status_box = status_box.replace('\n', '\n' + '\t' * i_level)
+    status_box = status_box.replace('@', '\x1b[31m@\x1b[0m')
+    status_box = status_box.replace('@', '\x1b[31m@\x1b[0m')
+    status_box = status_box.replace('@', '\x1b[31m@\x1b[0m')
