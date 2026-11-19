@@ -43,5 +43,13 @@ python -m src.main
 
 rest all explore and find it out yourself.
 
-# 
+# What i learned.
+
+* Working with python modules, python classes and python imports
+* Creating Basic Game Logic and Implementing Pokemon Battle Mechanics
+* Working with ANSI escape sequences and image processing
+
+# Ai Disclosure
+
+Stictly no ai is used in any form.
 
