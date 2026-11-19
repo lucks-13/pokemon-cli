@@ -64,7 +64,6 @@ def b_menu(width = 70):
 
 def move_selection_menu(pl_pokemon, width = 70):
     pl = pl_pokemon
-
     print('#' * width)
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print('#' + (' 0) ' + pl.moves[0].name).ljust(int(width / 2 - 2)) + '#' + (" 1) " + pl.moves[1].name).ljust(int(width / 2 - 1)) + '#')
@@ -73,9 +72,7 @@ def move_selection_menu(pl_pokemon, width = 70):
     print("#" * width)
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print('#' + (" 2) " + pl.moves[2].name).ljust(int(width / 2 - 2)) + '#' + (" 3) " + pl.moves[3].name).ljust(int(width / 2 - 1)) + '#')
-
-    print('#' + (" " + ty))
-    
+    print('#' + (" " + type_name[pl.moves[2].move_type].ljust(12) + " PP : " + str(pl.moves[2].pp) + '/' + str(pl.moves[2].pp_max)).ljust(int(width / 2 - 2)) + '#' + (" " + type_name[pl.moves[3].move_type].ljust(12) + " PP : " + str(pl.moves[3].pp) + '/' + str(pl.moves[3].pp_max)).ljust(int(width / 2 - 1)) + '#')
     print('#' + (' ' * int(width / 2 - 2)) + '#' + (' ' * int(width / 2 - 1)) + '#')
     print("#" * width)
     print('Your Choice : ', end="")
