@@ -157,32 +157,25 @@ class Pokemon:
         for i in range(0, 4):
             if self.moves[i].pp == 0:
                 available_moves.remove(i)
-        if len(available_moves) == 0 or move_index
-
-
-
-
-        if move_index == -1:
+        if len(available_moves) == 0 or move_index == -1:
             selected_move = move_db['tackle_a']
+            using_default_move = True
         else:
             selected_move = self.moves[move_index]
-        if selected_move.move_type == self.type:
-            stab_bonus = 1.5
-        else:
-            stab_bonus = 1
-        effect_multiplier = type_effect[selected_move.move_type][opponent.type]
-        random_factor = random.randint(85, 101)
+            using_default_move = False
         damage = 0
-        if selected_move.category == physical:
-            damage = int(0.01 * stab_bonus * effect_multiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
-        elif selected_move.category == special:
-            damage = int(0.01 * stab_bonus * effect_multiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
-            if opponent.hp <= damage:
-                opponent.hp = 0
+        if using_default_move or selected_move.name != '-':
+            if selected_move.move_type == self.type:
+                stab_bonus = 1.5
             else:
-                opponent.hp -= damage
-            if selected_move.name != 'Tackle A':
-                selected_move.pp -= 1
+                stab_bonus = 1
+            
+
+
+
+        
+            else:
+                return str(selected_move.name).lower().replace(" ", "_")
 
     def restore_all(self):
         self.restore_hp()
