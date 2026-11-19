@@ -13,4 +13,9 @@ def get_ansi_b_code(ansi_color):
     return ['48', '5', str(ansi_color)]
 
 def get_ansi_b_seq(ansi_color):
-    return 
+    return "\x1b[" + ";".join(get_ansi_b_code(ansi_color)) + "m"
+
+def gen_ansi_c_seq(curr_fg_color, curr_bg_color, new_fg_color, new_bg_color):
+    color_codes = []
+    if new_bg_color != curr_bg_color:
+        if new_bg_color is None:
