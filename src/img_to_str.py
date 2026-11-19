@@ -24,7 +24,7 @@ def load_and_resize_img(img_path, antialias, max_len, target_aspect_ratio):
 def p_img_str(img):
     for char in img:
         print(char, end="")
-
+        
 def img_to_str(img_path, max_len = 45, target_aspect_ratio = 0.5):
     antialias = False
     try:

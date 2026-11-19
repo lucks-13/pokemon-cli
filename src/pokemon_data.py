@@ -136,7 +136,7 @@ class Pokemon:
         self.speed = 45
         for i in range(5,level):
             self.level_up()
-            
+
     def restore_hp(self,restore_amount = 2000):
         if(self.hp + restore_amount) > self.max_hp:
             self.hp = self.max_hp
