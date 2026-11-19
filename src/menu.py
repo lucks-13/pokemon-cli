@@ -53,7 +53,7 @@ def p_menu(menu = menu):
 
 def p_pokedex():
     print("No Pokemon has Discovered.")
-    
+
 def next_move():
     global cursor_x
     global cursor_y

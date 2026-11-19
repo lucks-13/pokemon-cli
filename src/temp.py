@@ -1,5 +1,5 @@
-from pokemon_data import *
-from .trainer import Trainer, save_game
+from pokemon_data import Pokemon
+from trainer import Trainer, save_game
 
 player = Trainer("Test Trainer")
 starter = Pokemon(pokemon_number=1, level=5)
