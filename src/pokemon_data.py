@@ -32,7 +32,7 @@ class Pokemon:
         else:
             sel_move = available_moves[random.randint(0, len(available_moves))]
             return self.attack(opponent, sel_move)
-        
+            
     def restore_move_pp(self, move_index, restore_pp=100):
         if(self.moves[move_index].pp + restore_pp) > self.moves[move_index].pp_max:
             self.moves[move_index].pp = self.moves[move_index].pp_max
@@ -68,7 +68,7 @@ class Pokemon:
                 "--- Moves ---\n" + moves_details + '\n'
             )
         return pokemon_details
-
+    
     def set_base_stats(self, max_hp, attack, defense, s_attack, s_defence, speed):
         self.max_hp = max_hp
         self.hp = self.max_hp
@@ -136,7 +136,7 @@ class Pokemon:
         self.speed = 45
         for i in range(5,level):
             self.level_up()
-
+            
     def restore_hp(self,restore_amount = 2000):
         if(self.hp + restore_amount) > self.max_hp:
             self.hp = self.max_hp
