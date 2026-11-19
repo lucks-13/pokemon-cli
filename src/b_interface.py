@@ -143,5 +143,16 @@ def b_wild_pokemon(pl_trainer, opponent_pokemon):
 def b_trainer(pl_trainer, opponent_trainer):
     trainer = pl_trainer
     opponent = opponent_trainer
-    
+    os.system('clear')
+    print(trainer_t_box(opponent))
+    p_trainer(opponent, 10)
+    p_trainer_bs(trainer)
+    print(trainer_t_box(trainer,1, 10))
+    text_type("\nCool Trainer " + opponent.name + 'Wants to battle !')
+    input()
+    os.system('clear')
+    print(trainer_t_box(opponent))
+    p_trainer(opponent, 10)
+    p_trainer_bs(trainer)
+    print()
 
