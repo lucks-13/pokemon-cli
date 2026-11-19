@@ -73,4 +73,14 @@ def gen_pixels_to_ansi(pixels, width, height, bg_rgba, current_ansi_colors = Non
         bg_ansi_color = None
         bg_ansi_seq = "\x1b[49m"
     if current_ansi_colors is not None:
-        ansi
+        ansi_seq = ""
+        pre_fg_color = current_ansi_colors['fg']
+        pre_bg_color = current_ansi_colors['bg']
+    else:
+        ansi_seq = "\x1b[0m"
+        pre_fg_color = None
+        pre_bg_color = None
+    if curr_c_pos is not None:
+        
+
+    
