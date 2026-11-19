@@ -141,6 +141,17 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                     if pl.moves[i].pp == 0:
                         moves_with_pp.remove(i)
                 retry = False
+                if len(moves_with_pp) == 0:
+                    max = -1
+                else:
+                    if pl.moves[max].pp <= 0:
+                        text_type("No PP left for this move !")
+                        retry = True
+                        get_key()
+                if pl.speed > opponent.speed:
+                    first = pl
+                    second = opponent
+                elif pl.speed
 
 def p_trainer(pl_trainer, i_level = 0):
     img_str = img_to_str((g_name[pl_trainer.gender] + '.png').lower())
