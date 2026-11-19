@@ -196,7 +196,18 @@ def r_b_algo(pl_pokemon, opponent_pokemon, wild_pokemon = True):
                 C = escape_attemps
                 if B == 0:
                     B = 1
-                F = ((A * 128) / )
+                F = ((A * 128) / B + 30 * C) % 256
+                escape_success = random.randint(0, 256) < F
+                if escape_success:
+                    text_type("You escaped without any problems...")
+                    get_key()
+                    pokemon_fainted = True
+                else:
+                    text_type("You cannot escape from the battle !")
+                    escape_attemps += 1
+                    get_key()
+            else:
+                text_type("You cannot escape from a battle ")
 
 
 def p_trainer(pl_trainer, i_level = 0):
