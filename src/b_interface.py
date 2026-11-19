@@ -36,7 +36,7 @@ def p_opp_pokemon(opponent_pokemon, i_level = 10):
     print('#' * 32)
     print('# ' + (opponent_pokemon.name + ' ' + g_name[opponent_pokemon.gender]).ljust(20) + ("Lv : " + str(opponent_pokemon.level)).ljust(8) + ' ##')
     print('# ' + capture_marker + ' HP : (' + health_bar + ') ####')
-    print('#' * 32)
+    print('#' * 37)
     print(img_str)
 
 def p_pl_pokemon(pl_pokemon, i_level = 10):
@@ -44,10 +44,9 @@ def p_pl_pokemon(pl_pokemon, i_level = 10):
     filled_bar_width = int(pl_pokemon.hp * max_bar_width / pl_pokemon.max_hp)
     health_bar = ('#' * filled_bar_width) + ('_' * (max_bar_width - filled_bar_width))
     img_str = img_to_str((pl_pokemon.name + "_t.png").lower(), 35)
-    status_box = (
-        '\n ' + ('#' * 32) +
-        '\n ## ' + (pl_pokemon.name + ' ' + )
-    )
+    status_box = ('\n ' + ('#' * 32) + '\n ## ' + (pl_pokemon.name + ' ' + g_name[pl_pokemon.gender]).ljust(8) + ' #' + '\n #### HP : (' + health_bar + ') #' + '\n' + ('#' * 37))
+    print(img_str)
+    print(status_box.replace('\n', '\n' + '\t' * i_level))
 
 
     img_str = img_str.replace('\n', '\n' + '\t' * i_level)
