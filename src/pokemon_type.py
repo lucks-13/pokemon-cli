@@ -37,7 +37,7 @@ type_name = {
     land : 'Land',
     poison : 'Poison',
     fly : 'Fly',
-    no_type : '-'
+    no_type : ' '
 }
 
 t_name_i = {
@@ -59,7 +59,7 @@ t_name_i = {
     'land' : land,
     'poison' : poison,
     'fly' : fly,
-    '-' : no_type
+    ' ' : no_type
 }
 
 physical = 0
@@ -69,13 +69,13 @@ no_category = 2
 category_name = {
     physical : 'Physical',
     special : 'Special',
-    no_category : '-'
+    no_category : ' '
 }
 
 c_name_i = {
     'physical' : physical,
     'special' : special,
-    '-' : no_category
+    ' ' : no_category
 }
 
 female = 0
@@ -89,7 +89,7 @@ g_name = {
     male : 'Male',
     girl : 'Girl',
     boy : 'Boy',
-    no_gender : '-'
+    no_gender : ' '
 }
 
 g_name_i = {
@@ -97,7 +97,7 @@ g_name_i = {
     'male' : male,
     'girl' : girl,
     'boy' : boy,
-    '-' : no_gender
+    ' ' : no_gender
 }
 
 bool_s = {

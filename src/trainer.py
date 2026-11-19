@@ -17,6 +17,7 @@ class Trainer:
             "Name : " + self.name + '\n'
             "Gender : " + text_gender + '\n'
             "ID : " + text_id + '\n'
+            "Map : " + str()
             "--- Team ---\n" + text_team
         )
     
