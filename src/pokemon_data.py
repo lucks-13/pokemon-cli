@@ -172,11 +172,12 @@ class Pokemon:
             effect_mutiplier = type_effect[selected_move.move_type][opponent.type]
             random_factor = random.randint(85, 101)
             if selected_move.category == physical:
-                damage = int()
+                damage = int(0.01 * stab_bonus * effect_mutiplier * random_factor * (((0.2 * self.level + 1) * self.attack_stat * selected_move.power) / (25 * opponent.defense) + 2))
+            elif selected_move.category == special:
+                damage = int
 
 
 
-        
             else:
                 return str(selected_move.name).lower().replace(" ", "_")
 
