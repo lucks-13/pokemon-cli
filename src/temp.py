@@ -1,4 +1,4 @@
-from .pokemon_data import Pokemon
+from pokemon_data import *
 from .trainer import Trainer, save_game
 
 player = Trainer("Test Trainer")

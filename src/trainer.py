@@ -64,5 +64,7 @@ def load_game(file_path="pokemon_cli_save.json"):
     for pokemon_data in save_data['team']:
         team.append(dict_to_pokemon(pokemon_data))
     trainer = Trainer(save_data['name'], save_data['gender'], save_data['id'], team)
-    
+    trainer.map_1 = save_data['map_1']
+    trainer.x = save_data['p_x']
+    trainer.y = save_data['p_y']
     return trainer
